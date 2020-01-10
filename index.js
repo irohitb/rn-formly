@@ -12,10 +12,10 @@ import {
   Otp,
   InputText, 
   AutoComplete
-} from '../formComponent/index'
+} from './formComponent/index'
 import Spinner from 'react-native-loading-spinner-overlay'
 
-export const SignupFormComponent = (props) => {
+ const SignupFormComponent = (props) => {
 
   const {
     keyboardAutoOpenForText, 
@@ -375,7 +375,7 @@ SignupFormComponent.defaultProps = {
 
 
 
-
+export default SignupFormComponent
 
 
 

@@ -4,11 +4,12 @@
   "description": "Creates a beautiful forms for React-Native within minutes with validatos, error handling by passing just JSON",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pn-local": "npm version --no-git-tag-version patch && npm publish --registry http://localhost:4873"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irohitb/intelligent-forms.git"
+    "url": "git+https://github.com/irohitb/rn-formly.git"
   },
   "keywords": [
     "react-native",
@@ -22,9 +23,9 @@
   "author": "Rohit Bhatia (irohitbhatia@gmail.com)",
   "license": "MIT ",
   "bugs": {
-    "url": "https://github.com/irohitb/intelligent-forms/issues"
+    "url": "https://github.com/irohitb/rn-formly/issues"
   },
-  "homepage": "https://github.com/irohitb/intelligent-forms#readme",
+  "homepage": "https://github.com/irohitb/rn-formly#readme",
   "dependencies": {
     "react-native-form-prorgress": "^1.0.4",
     "react-native-image-crop-picker": "^0.26.2",
