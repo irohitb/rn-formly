@@ -1,0 +1,39 @@
+{
+  "name": "rn-formly",
+  "version": "1.0.0",
+  "description": "Creates a beautiful forms for React-Native within minutes with validatos, error handling by passing just JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irohitb/intelligent-forms.git"
+  },
+  "keywords": [
+    "react-native",
+    "formly",
+    "form",
+    "forms",
+    "signup Screen",
+    "dynamic forms",
+    "javascript forms"
+  ],
+  "author": "Rohit Bhatia (irohitbhatia@gmail.com)",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/irohitb/intelligent-forms/issues"
+  },
+  "homepage": "https://github.com/irohitb/intelligent-forms#readme",
+  "dependencies": {
+    "react-native-form-prorgress": "^1.0.4",
+    "react-native-image-crop-picker": "^0.26.2",
+    "react-native-loading-spinner-overlay": "^1.0.1",
+    "react-native-next-input": "^0.10.0"
+  }, 
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "16.12.0",
+    "react-native": "0.61.5"
+  }
+}
