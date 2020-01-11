@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }, 
   modelOpenViewMain: {
-    zIndex: 20,
+    zIndex: 1,
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
     ...StyleSheet.absoluteFillObject,
@@ -34,17 +34,17 @@ const styles = StyleSheet.create({
     flex: 1,
     display: 'flex', 
     flexDirection: 'column', 
-    alignItems: 'center', 
-    justifyContent: 'center'
+    alignItems: 'center'
   },
   modelOpenViewSub: {
     backgroundColor:'rgba(255,255,255, 0.9)',
     display: 'flex', 
     flexDirection: 'column',
     alignItems: 'center',
-    height: Dimensions.get('window').height*0.6,
+    height: Dimensions.get('window').height*0.4,
     width: Dimensions.get('window').width * 0.9,
-    paddingBottom: 10
+    paddingBottom: 10,
+    marginTop: Dimensions.get('window').height * 0.1
   }, 
   flatlistIndividualComponent: {
     height: 30, 
