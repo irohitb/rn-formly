@@ -71,7 +71,9 @@ import Spinner from 'react-native-loading-spinner-overlay'
     componentProps,
     //---- AutoComplete 
     asyncFunction,
-    loaderRequired
+    loaderRequired,
+    listViewStyle,
+    listTextStyle
   }  = templateOptions
 
   // Button Touch 
@@ -218,6 +220,8 @@ import Spinner from 'react-native-loading-spinner-overlay'
         defaultColor={defaultColor}
         asyncFunction={asyncFunction}
         loaderRequired={loaderRequired}
+        listViewStyle={listViewStyle}
+        listTextStyle={listTextStyle}
       />
     )
   }
