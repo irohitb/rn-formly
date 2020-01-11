@@ -71,6 +71,7 @@ const AutoComplete = (props) => {
     asyncFunction,
     textInputStyle,
     loaderRequired,
+    listTextStyle
     ...rest
   } = props
   let parentViewRef = null
@@ -161,8 +162,8 @@ const AutoComplete = (props) => {
             <FlatList 
             data={suggestions}
             renderItem={({ item }) => (
-              <TouchableOpacity onPress={() => onSelection(item)} style={styles.flatlistIndividualComponent}>
-                <Text style={styles.flatListIndividualComponentText}> {item.title}</Text>
+              <TouchableOpacity onPress={() => onSelection(item)} style={[styles.flatlistIndividualComponent, listViewStyle]}>
+                <Text style={[styles.flatListIndividualComponentText, listTextStyle]}> {item.title}</Text>
             </TouchableOpacity>
             )} 
             keyExtractor={(item) => item.id.toString()}/>
@@ -180,7 +181,9 @@ AutoComplete.propTypes = {
   value: PropTypes.object,
   textInputStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   asyncFunction: PropTypes.func.isRequired,
-  loaderRequired: PropTypes.bool
+  loaderRequired: PropTypes.bool, 
+  listTextStyle: PropTypes.object, 
+  listViewStyle: PropTypes.object
 }
 
 export default AutoComplete
