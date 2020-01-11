@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
-import {ColorCalculator} from './../../utils/index'
+import {ColorCalculator} from './../utils/index'
 
 // TODO: Checkbox scroll View implementation 
 const styles = StyleSheet.create({

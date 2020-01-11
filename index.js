@@ -363,10 +363,11 @@ SignupFormComponent.propTypes = {
   defaultErrorMessage: PropTypes.string,
   backIconStyle: PropTypes.object
 }
+
 SignupFormComponent.defaultProps = {
   keyboardAutoOpenForText: true,
   ProgressBarProps: {
-    blink: true,
+    blink: false,
   },
   backgroundViewColor: 'white',
   defaultColor: 'black', 
