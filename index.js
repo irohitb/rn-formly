@@ -5,7 +5,6 @@ import ProgressBar from "react-native-form-prorgress"
 import {
   DateTyper, 
   CheckBoxes, 
-  PickerBottom, 
   PickerAtPosition, 
   SingleImageSelector,
   MultipleImageSelector, 

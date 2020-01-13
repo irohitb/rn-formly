@@ -71,7 +71,8 @@ const AutoComplete = (props) => {
     asyncFunction,
     textInputStyle,
     loaderRequired,
-    listTextStyle
+    listTextStyle,
+    listViewStyle,
     ...rest
   } = props
   let parentViewRef = null
