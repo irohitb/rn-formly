@@ -2,6 +2,14 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import {View, Picker, StyleSheet, Dimensions} from 'react-native'
 
+const styles = StyleSheet.create({
+  PickerBottomRN: {
+    marginTop: 50
+  }, 
+  pickerDefault: {
+    width: Dimensions.get('window').width
+  }
+})
 
 export const PickerAtPosition = (props) => {
   const {options, upsideEmit, value} = props

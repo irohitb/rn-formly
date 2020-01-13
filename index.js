@@ -171,14 +171,8 @@ import Spinner from 'react-native-loading-spinner-overlay'
       imageComponentStyle={imageComponentStyle}
       cropHeight={cropHeight}
       />
-    ), 
-    pickerBottom:  options === undefined ? null : ( //Not Implmeneted yet
-      <PickerBottom
-      options={options}
-      upsideEmit={onChangeHandler}
-      value={payload[key] ? `${payload[key]}` : ''}/>
-    ), 
-    picker:  options === undefined ? null : (
+    ),  
+    picker: options === undefined ? null : (
       <PickerAtPosition 
       options={options}
       upsideEmit={onChangeHandler} 
