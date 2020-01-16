@@ -41,7 +41,7 @@ And if you intend to use image Components then
 npm i react-native-image-crop-picker --save
 ```
 
-### IOS setup
+## IOS setup
 
 For iOS, If you are using React Native => 0.60 then simple do 
 
