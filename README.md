@@ -43,20 +43,60 @@ npm i react-native-image-crop-picker --save
 
 ## IOS setup
 
-For iOS, If you are using React Native => 0.60 then simple do 
+For iOS, If you are using **React Native => 0.60** then simple do 
 
 ```
 pod install 
 ```
 
 
-#### Configuring Image Crop picker 
+else follow this guide: https://github.com/react-native-community/react-native-device-info
+
+
+#### Setting up image crop picker
+
+Image Crop picker requires you to have relavent permission to access camera and storage for both iOS and Android 
+
+1. Go to info.plist and this 
+
+```
+<plist version="1.0">
+  <dict>
+    ...
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>$(PRODUCT_NAME) would like access to your photo gallery</string>
+    <key>NSCameraUsageDescription</key>
+    <string>$(PRODUCT_NAME) would like to use your camera</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>$(PRODUCT_NAME) would like to save photos to your photo gallery</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>$(PRODUCT_NAME) would like to use your microphone (for videos)</string>
+  </dict>
+</plist>
+```
+
+You refer to following documentation: https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+
+or look into this commit: https://github.com/irohitb/formly-example/commit/2814782d01f6f111208089ff4628c28752919d8d
 
 
 
+## Android Setup 
 
+Add following lines in your android/app/src/main/AndroidManifest.xml
 
+```
+ <uses-permission android:name="android.permission.INTERNET" />
+ <uses-permission android:name="android.permission.CAMERA" />
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
 
+Commit: https://github.com/irohitb/formly-example/commit/939b81a90c088ed141b12af9ee8fc7340068f106
+
+If this does not work, refer to following instructions 
+
+1. Image Croper: https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+2. React Native Device Info: https://github.com/react-native-community/react-native-device-info
 
 
 
