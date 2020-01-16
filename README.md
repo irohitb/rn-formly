@@ -22,7 +22,7 @@ For Advance user, rn-formly allows you to cuztomise styling of individual compon
 <img src="https://user-images.githubusercontent.com/32276134/72256142-7eaec580-362e-11ea-9738-efe7ce49e8a4.png" width=250 height=400> <img src="https://user-images.githubusercontent.com/32276134/72256143-7f475c00-362e-11ea-9074-932075147bcc.png" width=250 height=400>
 <img src="https://user-images.githubusercontent.com/32276134/72256143-7f475c00-362e-11ea-9074-932075147bcc.png" width=250 height=400>
 
-### Installation 
+## Installation 
 
 
 RN-Formly use following as peerDependency 
@@ -48,7 +48,7 @@ pod install
 ```
 
 
-else follow this guide: https://github.com/react-native-community/react-native-device-info
+else follow this [guide](https://github.com/react-native-community/react-native-device-info)
 
 
 ### Setting up image crop picker
@@ -76,9 +76,9 @@ Image Crop picker requires you to have relavent permission to access camera and 
 </plist>
 ```
 
-You refer to following documentation: https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+You refer to following [documentation](https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md)
 
-or look into this commit: https://github.com/irohitb/formly-example/commit/2814782d01f6f111208089ff4628c28752919d8d
+or look into this [commit](https://github.com/irohitb/formly-example/commit/2814782d01f6f111208089ff4628c28752919d8d)
 
 
 
@@ -92,12 +92,12 @@ Add following lines in your android/app/src/main/AndroidManifest.xml
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
-Commit: https://github.com/irohitb/formly-example/commit/939b81a90c088ed141b12af9ee8fc7340068f106
+look at this [commit](https://github.com/irohitb/formly-example/commit/939b81a90c088ed141b12af9ee8fc7340068f106)
 
 If this does not work, refer to following instructions 
 
-1. Image Croper: https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
-2. React Native Device Info: https://github.com/react-native-community/react-native-device-info
+1. [For Image Croper](https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md)
+2. [For React Native Device Info](https://github.com/react-native-community/react-native-device-info)
 
 
 
