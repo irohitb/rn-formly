@@ -41,8 +41,6 @@ And if you intend to use image Components then
 npm i react-native-image-crop-picker --save
 ```
 
-## IOS setup
-
 For iOS, If you are using **React Native => 0.60** then simple do 
 
 ```
@@ -53,7 +51,10 @@ pod install
 else follow this guide: https://github.com/react-native-community/react-native-device-info
 
 
-#### Setting up image crop picker
+### Setting up image crop picker
+
+#### IOS setup
+
 
 Image Crop picker requires you to have relavent permission to access camera and storage for both iOS and Android 
 
@@ -81,7 +82,7 @@ or look into this commit: https://github.com/irohitb/formly-example/commit/28147
 
 
 
-## Android Setup 
+#### Android Setup 
 
 Add following lines in your android/app/src/main/AndroidManifest.xml
 
