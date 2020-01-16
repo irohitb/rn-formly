@@ -100,10 +100,62 @@ If this does not work, refer to following instructions
 2. [For React Native Device Info](https://github.com/react-native-community/react-native-device-info)
 
 
+## Usage 
+
+To get started/or a try it out, you can clone or checkout the following [repo](https://github.com/irohitb/formly-example)
+
+**Minimilistic Setup** 
+
+```
+import SignupFormComponent from 'rn-formly';
 
 
+const inputFields = [
+  {
+    key: 'name', 
+    type: 'text', 
+    label: `Your Full Name`,
+    required: true,
+    helper: 'Using your real name would make it more likely for you to get a match',
+    templateOptions: { 
+      componentProps: {
+        placeholder: 'Frank Murphy'
+      }
+    }
+  }, 
+  {
+    key: 'otp', 
+    type: 'otp', 
+    label: 'Enter OTP',
+    helper: '(optional) but try to enter incorrect date', 
+    templateOptions: {
+      noOfTextInput: 5,
+    }
+  }]
+  
+  const App: () => React$Node = () => {
 
+  const justLogDataFromForms = (index, key, currentValue,  payload) => {
+     console.log('Logging from Parent log')
+    console.log(index, key, currentValue, payload)
+  }
 
+  return (
+    <>
+      <SignupFormComponent 
+      inputFields={inputFields}
+      globalButtonText={'Next'}
+      onButtonClick={justLogDataFromForms}
+      defaultColor={'green'}
+      ProgressBarProps={{
+        blink: false
+      }}
+      /> 
+    </>
+  );
+};
+
+```
 
 
 
