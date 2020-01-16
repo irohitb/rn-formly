@@ -24,9 +24,39 @@ For Advance user, rn-formly allows you to cuztomise styling of individual compon
 
 ### Installation 
 
+
+RN-Formly use following as peerDependency 
+1. react-native-device-info
+2. react-native-image-crop-picker
+
+
 ```
+npm i react-native-device-info --save
 npm i rn-formly  --save
 ```
+
+And if you intend to use image Components then 
+
+```
+npm i react-native-image-crop-picker --save
+```
+
+### IOS setup
+
+For iOS, If you are using React Native => 0.60 then simple do 
+
+```
+pod install 
+```
+
+
+#### Configuring Image Crop picker 
+
+
+
+
+
+
 
 
 
