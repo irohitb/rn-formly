@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/irohitb/rn-formly#readme",
   "dependencies": {
-    "react-native-form-prorgress": "^1.0.7",
+    "react-native-form-prorgress": "^1.0.11",
     "react-native-image-crop-picker": "^0.26.2",
     "react-native-loading-spinner-overlay": "^1.0.1",
     "react-native-next-input": "^0.10.0"
