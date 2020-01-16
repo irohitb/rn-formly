@@ -157,5 +157,19 @@ const inputFields = [
 
 ```
 
+### Required Props 
+
+| **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
+|----------|----------|-------------|--------------|-------------|----------|
+| 1. | inputFields | Array | Nope | Yes | Click here |
+| 2. | onButtonClick | function | Nope | Yes | Passed function recives `index` of the element in array, `key` associated with it and the complete payload till now |
+
+### Optional Props 
+
+| **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
+|----------|----------|-------------|--------------|-------------|----------|
+| 1. | 
+
+
 
 
