@@ -162,7 +162,9 @@ const inputFields = [
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
 | 1. | inputFields | Array | Nope | Yes | Click here to know more |
-| 2. | onButtonClick | function | Nope | Yes | Passed function recives `index` of the element in array, `key` associated with it and the complete payload till now |
+| 2. | onButtonClick | Async function | Nope | Yes | Passed function recives `index` of the element in array, `key` associated with it and the complete payload, This is triggered after user have clicked on the next button and before the itteration happens, you can throw errors here to prevent from incrementing to the text state |
+
+This is how error handling is done behind the scene: ` if (error.message) setErrorData({status: true, message: error.message})`
 
 ### Optional Props
 
@@ -217,4 +219,61 @@ const styles = StyleSheet.create({
 and then pass `styles.someStyle` in props 
 
 2. For `stylesheet object`, Default `None` does not mean that element won't have any styles, the props provided by user would override the default styling.
+
+## inputFields Props 
+
+
+inputFields Props supports most of the popular component you would need in a form, if we are missing any component, create an issue and we should be able to add within 2-4 days. 
+
+
+### Currently Supported Component 
+
+1. Text 
+2. dataTyper 
+3. checkboxes
+4. picker
+5. image,
+6. images
+7. AutoComplete
+
+### Structuring your Array Object 
+
+```
+  {
+    key: 'name', 
+    type: 'text', 
+    label: 'Your Full Name',
+    helper: 'Using your real name would make it more likely for you to get a match',
+    templateOptions: { 
+      componentProps: {
+        placeholder: 'Frank Murphy'
+      },
+      templateStyle: styles.textStyle // refer to the style component
+    }
+  }
+ ```
+ 
+ #### Global Properties for each object
+ 
+ 
+
+| S.NO | key | description | Required  |
+| ---- | --- | ----------- | --------  |
+| 1. | key   | Unique key to identify the object  | Yes |
+| 2. | type  | type of component you want to use (should be one of the above) | Yes | 
+| 3. | label | Heading for the field | Yes | 
+| 4. | helper | Helper for the field | No | 
+| 5. | templateStyle | style for the template (read about the component description to know more about it) | No | 
+| 6. | templateOptions | props for specific components | No | 
+| 7. | Validator | `u`
+
+
+#### Text Component 
+
+
+
+
+
+
+
 
