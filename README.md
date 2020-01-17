@@ -58,7 +58,7 @@ else follow this [guide](https://github.com/react-native-community/react-native-
 
 Image Crop picker requires you to have relavent permission to access camera and storage for both iOS and Android 
 
-1. Go to info.plist and this 
+1. Go to info.plist and add this 
 
 ```
 <plist version="1.0">
@@ -76,7 +76,7 @@ Image Crop picker requires you to have relavent permission to access camera and 
 </plist>
 ```
 
-You refer to following [documentation](https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md)
+You refer to following [documentation](https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md) for more information (and probably for integration in complex project) 
 
 or look into this [commit](https://github.com/irohitb/formly-example/commit/2814782d01f6f111208089ff4628c28752919d8d)
 
