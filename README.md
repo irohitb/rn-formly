@@ -35,7 +35,7 @@ npm i react-native-device-info --save
 npm i rn-formly  --save
 ```
 
-And if you intend to use image Components then 
+And if you intend to use image Components then install `react-native-image-crop-picker`
 
 ```
 npm i react-native-image-crop-picker --save
@@ -104,7 +104,7 @@ If this does not work, refer to following instructions
 
 To get started/or a try it out, you can clone or checkout the following [repo](https://github.com/irohitb/formly-example)
 
-**Minimilistic Setup** 
+**Minimilistic Setup Example** 
 
 ```
 import SignupFormComponent from 'rn-formly';
@@ -161,14 +161,44 @@ const inputFields = [
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | inputFields | Array | Nope | Yes | Click here |
+| 1. | inputFields | Array | Nope | Yes | Click here to know more |
 | 2. | onButtonClick | function | Nope | Yes | Passed function recives `index` of the element in array, `key` associated with it and the complete payload till now |
 
-### Optional Props 
+### Optional Props
+
+Important Props are highlighted
+
+#### General Optional Props 
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | 
+| 1. | textStyle | stylesheet object | none | No | Heading text style (style for your `label` key in `inputFields` props) | 
+| 2. | ProgressBar | object | blink: false | No | click here to know more about ProgressBar Component | 
+| 3. | helperTextStyle | stylesheet object | none | No | Helper text style (style for your `helper` key in `inputFields` )
+| 4. |  backgroundViewColor | string | 'white' | No | background for the view of your form | 
+| **5.** | **defaultColor** | **string**  | **'black'** | **no** | **Formats button color, text color and sub component color accordingly (can be override by passing styles for individual component)** | 
+| **6.** | **onFinish** | **function** | **none** | **No** | **Function which is triggered after user have itterated over all the elements in the passed inputFields** |
+| 7. | backIconStyle | stylesheet object | none | No | Styling for the back button `<` | 
+
+#### Button Optional props 
+
+Validation and Error throwing are done in `inputFields` array. See `inputFields` section to know more
+
+| **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
+|----------|----------|-------------|--------------|-------------|----------|
+| 1. | buttonSelectedStyle | stylesheet object | none | No | Styling of the button when user is allowed to move to the next field |
+| 2. | buttonNotSelectedStyle | stylesheet object | none | No | Styling of the button when user is not allowed to move to the next field |
+| 3. | buttonSelectedTextStyle | stylesheet object | none | No | styling of the text inside the button when user is allowed to move to the next field | 
+| 4. | buttonNotSelectedTextStyle | stylesheet object | none | no | styling of the text inside the button when user is not allowed to move to the next field |
+
+#### Error Props 
+
+Validation and Error throwing are done in `inputFields` array. See `inputFeilds` section to know more
+
+| **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
+|----------|----------|-------------|--------------|-------------|----------|
+| 1. | defaultErrorMessage | string | 'Sorry Something went wrong' | No | Error message for user when error occurs but the error does not contain a message for failure |
+| 2. | errorStyle | stylesheet object | none | No | Text Styling for error message | 
 
 
 
