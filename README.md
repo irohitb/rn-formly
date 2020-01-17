@@ -164,7 +164,7 @@ const inputFields = [
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | inputFields | Array | Nope | Yes | Click here to know more |
+| 1. | inputFields | Array | Nope | Yes | [Click here](https://github.com/irohitb/rn-formly#inputfields-props) |
 | 2. | onButtonClick | Async function | Nope | Yes | Passed function recives `index` of the element in array, `key` associated with it and the complete payload, This is triggered after user have clicked on the next button and before the itteration happens, you can throw errors here to prevent from incrementing to the text state |
 
 This is how error handling is done behind the scene: ` if (error.message) setErrorData({status: true, message: error.message})`
@@ -187,7 +187,7 @@ Important Props are highlighted
 
 #### Button Optional props 
 
-Validation and Error throwing are done in `inputFields` array. See `inputFields` section to know more
+Validation and Error throwing are done in `inputFields` array. See [inputFields](https://github.com/irohitb/rn-formly#inputfields-props) section to know more
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
@@ -231,14 +231,14 @@ inputFields Props supports most of the popular component you would need in a for
 
 ### Currently Supported Component 
 
-1. Text 
-2. dataTyper 
-3. checkboxes
-4. picker
-5. image,
-6. images
-7. AutoComplete
-8. otp 
+1. [Text](https://github.com/irohitb/rn-formly#text-component) 
+2. [dataTyper](https://github.com/irohitb/rn-formly#datetyper)
+3. [checkboxes](https://github.com/irohitb/rn-formly#checkboxes)
+4. [picker]((https://github.com/irohitb/rn-formly#picker))
+5. [image](https://github.com/irohitb/rn-formly#image-single-image),
+6. [images](https://github.com/irohitb/rn-formly#images)
+7. [AutoComplete](AutoComplete)
+8. [otp](https://github.com/irohitb/rn-formly#otp) 
 
 ### Structuring your Array Object 
 
@@ -447,3 +447,39 @@ Component level Props are mostly passed in `templateOptions`
 | 3. | loaderRequired | Boolean | shows loader until user recieves the data from async function | no | false | 
 | 4. | listViewStyle | styling object | styling for the list list view | no | nope |
 | 5. | listTextStyle | styling object | styling for the text in the list view | no | nope |
+
+
+### Picker 
+
+```
+  {
+    key: "gender", 
+    type: 'picker',
+    label: 'Select your Gender', 
+    helper: '(Optional), Please select a gender', 
+    templateOptions: {
+      options: [
+  {
+  key: 'male',
+  label: 'Male',
+  value: false 
+  },
+  {
+    key: 'female', 
+    label: 'Female',
+    value: false
+  },
+  {
+    key: 'others', 
+    label: 'Others',
+    value: false
+  }
+]
+    }
+  }, 
+  ```
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | options | Array | should contain `key`, `label` and `value` | Yes | None
