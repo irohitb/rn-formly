@@ -255,25 +255,63 @@ inputFields Props supports most of the popular component you would need in a for
  
  #### Global Properties for each object
  
- 
-
-| S.NO | key | description | Required  |
-| ---- | --- | ----------- | --------  |
-| 1. | key   | Unique key to identify the object  | Yes |
-| 2. | type  | type of component you want to use (should be one of the above) | Yes | 
-| 3. | label | Heading for the field | Yes | 
-| 4. | helper | Helper for the field | No | 
-| 5. | templateStyle | style for the template (read about the component description to know more about it) | No | 
-| 6. | templateOptions | props for specific components | No | 
-| 7. | Validator | `u`
+| S.NO | key | type | description | Required  |
+| ---- | --- | ------ | ----------- | --------  |
+| 1. | key   | string | Unique key to identify the object  | Yes |
+| 2. | type  | string | type of component you want to use (should be one of the above) | Yes | 
+| 3. | label | string | Heading for the field | Yes | 
+| 4. | helper | string | Helper for the field | No | 
+| 5. | templateOptions | object | props for specific components | No | 
+| 6. | Validator | function | sometimes you want to do validation in the real time and not after the next button is clicked, in this case pass the validator function. Validator function would recieve following data in it's argument `index, key, currentData, payload` | No |
+| 7. | required | Boolean | if `required: true` the field cannot be empty i.e button to itterate to the next component will be disable | no | 
 
 
-#### Text Component 
+### Text Component 
+
+```
+{
+    key: 'name', 
+    type: 'text', 
+    label: 'Your Full Name',
+    helper: 'Using your real name would make it more likely for you to get a match',
+    templateOptions: { 
+      componentProps: {
+        placeholder: 'Frank Murphy'
+      },
+      templateStyle: styles.textStyle // refer to the style component
+    }
+  }
+  ```
+Component level Props are mostly passed in `templateOptions`
+
+##### TemplateOptions keys with value
+
+| S.NO | key | type | description | Required  |
+| ---- | --- | ---- | ----------- | --------  |
+| 1. | componentProps | object | Can pass all the props for `TextInput ` | no | 
+| 2. | templateStyle | style object | stying for text input | no | 
 
 
 
 
 
+### dateTyper
 
+```
+  {
+    key: 'dob', 
+    type: 'dateTyper', //change this to Dob component
+    label: 'Your Date of birth',
+    helper: 'Your Birthdate will help us in connecting you with people of similar age',
+    required: true
+  }, 
+  ```
+  
+  Component level Props are mostly passed in `templateOptions`
 
+##### TemplateOptions keys with value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | dateFormat | string | should be either `DDMMYYYY`, or `MMDDYYYY` or `YYYYMMDD` | No |
 
