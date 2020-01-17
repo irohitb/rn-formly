@@ -400,30 +400,6 @@ Component level Props are mostly passed in `templateOptions`
 | 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
 
 
-
-### image (single image)
-
-```
-  {
-    key: 'image',
-    type:'image', 
-    label: "Upload your cover image", 
-    helper: 'You can change your profile pic anytime from settings',
-    templateOptions: {
-     cropHeight: 200,
-     cropWidth: 300
-    }
-  },
-
-```
-
-##### TemplateOptions key/value
-
-| S.NO | key | type | description | Required  | Default | 
-| ---- | --- | ---- | ----------- | --------  | ------- |
-| 1. | cropWidth | number | width of the image user is allowed to crop/select | no | none |
-| 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
-
 ### images
 
 ```
