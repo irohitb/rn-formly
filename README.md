@@ -1,18 +1,17 @@
-# Rect native formly documenation 
-
+# Rect native formly documentation 
 
 ### About
 
-Rn-formly is a light-weight React Native implemenation of formly component. 
+rn-formly is a light-weight React Native implementation of a formly component. 
 
-Basically using rn-formly, you can easily create beautiful forms, signup screens, settings (upcoming in v2) in less than 2 minutes by just passing a JSON. 
+By using rn-formly you can easily create beautiful forms, signup screens, settings (upcoming in v2) in less than 2 minutes by just passing a JSON. 
 
-RN-formly  supports plugging in custom validators, loading data asynchronously, passing custom errors and includes progress bar to show progress, loadder handles safe area and almost all the popular component you would require to build beautiful area
+RN-formly  supports plugging in custom validators, loading data asynchronously, passing custom errors and includes progress bar to show progress, loader handles safe area and almost all the popular component you would require to build beautiful area
 
-For Advance user, rn-formly allows you to cuztomise styling of individual componenet as well (see component props below for more information)
+For the Advance user, rn-formly allows you to customize the styling of individual component as well (see component props below for more information)
 
 ### Note
- Developer of this repo looking for full time interesting oppertunities, [connect on linkedin](https://www.linkedin.com/in/irohitbh/) 
+ The developer of this repo looking for full-time interesting opportunities, [connect on linkedin](https://www.linkedin.com/in/irohitbh/) 
 
 
 ### Screenshots 
@@ -59,7 +58,7 @@ else follow this [guide](https://github.com/react-native-community/react-native-
 #### IOS setup
 
 
-Image Crop picker requires you to have relavent permission to access camera and storage for both iOS and Android 
+Image Crop picker requires you to have relevant permission to access camera and storage for both iOS and Android 
 
 1. Go to info.plist and add this 
 
@@ -97,7 +96,7 @@ Add following lines in your android/app/src/main/AndroidManifest.xml
 
 look at this [commit](https://github.com/irohitb/formly-example/commit/939b81a90c088ed141b12af9ee8fc7340068f106)
 
-If this does not work, refer to following instructions 
+If this does not work, refer to following instructions. 
 
 1. [For Image Croper](https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md)
 2. [For React Native Device Info](https://github.com/react-native-community/react-native-device-info)
@@ -105,7 +104,7 @@ If this does not work, refer to following instructions
 
 ## Usage 
 
-To get started/or a try it out, you can clone or checkout the following [repo](https://github.com/irohitb/formly-example)
+To get started/or a try it out, you can clone or check out the following [repo](https://github.com/irohitb/formly-example)
 
 **Minimilistic Setup Example** 
 
@@ -165,13 +164,13 @@ const inputFields = [
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
 | 1. | inputFields | Array | Nope | Yes | [Click here](https://github.com/irohitb/rn-formly#inputfields-props) |
-| 2. | onButtonClick | Async function | Nope | Yes | Passed function recives `index` of the element in array, `key` associated with it and the complete payload, This is triggered after user have clicked on the next button and before the itteration happens, you can throw errors here to prevent from incrementing to the text state |
+| 2. | onButtonClick | Async function | Nope | Yes | Passed function receives `index` of the element in array, `key` associated with it and the complete payload, This is triggered after user have clicked on the Next button, and before the iteration happens, you can throw errors here to prevent from incrementing to the text state |
 
 This is how error handling is done behind the scene: ` if (error.message) setErrorData({status: true, message: error.message})`
 
 ### Optional Props
 
-Important Props are highlighted
+Important Props are highlighted.
 
 #### General Optional Props 
 
@@ -191,14 +190,14 @@ Validation and Error throwing are done in `inputFields` array. See [inputFields]
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | buttonSelectedStyle | stylesheet object | none | No | Styling of the button when user is allowed to move to the next field |
-| 2. | buttonNotSelectedStyle | stylesheet object | none | No | Styling of the button when user is not allowed to move to the next field |
-| 3. | buttonSelectedTextStyle | stylesheet object | none | No | styling of the text inside the button when user is allowed to move to the next field | 
-| 4. | buttonNotSelectedTextStyle | stylesheet object | none | no | styling of the text inside the button when user is not allowed to move to the next field |
+| 1. | buttonSelectedStyle | stylesheet object | none | No | Styling of the button when a user is allowed to move to the next field |
+| 2. | buttonNotSelectedStyle | stylesheet object | none | No | styling of the button when a user is not allowed to move to the next field |
+| 3. | buttonSelectedTextStyle | stylesheet object | none | No | styling of the text inside the button when a user is allowed to move to the next field | 
+| 4. | buttonNotSelectedTextStyle | stylesheet object | none | no | styling of the text inside the button when a user is not allowed to move to the next field |
 
 #### Error Props 
 
-Validation and Error throwing are done in `inputFields` array. See `inputFeilds` section to know more
+Validation and Error throwing is done in the `inputFields` array. See `inputFeilds` section to know more.
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
@@ -221,12 +220,12 @@ const styles = StyleSheet.create({
 
 and then pass `styles.someStyle` in props 
 
-2. For `stylesheet object`, Default `None` does not mean that element won't have any styles, the props provided by user would override the default styling.
+2. For `stylesheet object,` Default `None` does not mean that element won't have any styles; the props provided by the user would override the default styling.
 
 ## inputFields Props 
 
 
-inputFields Props supports most of the popular component you would need in a form, if we are missing any component, create an issue and we should be able to add within 2-4 days. 
+inputFields Props supports most of the popular components you would need in a form. If we are missing any component, create an issue, and we should be able to add within 2-4 days. 
 
 
 ### Currently Supported Component 
@@ -266,8 +265,8 @@ inputFields Props supports most of the popular component you would need in a for
 | 3. | label | string | Heading for the field | Yes | 
 | 4. | helper | string | Helper for the field | No | 
 | 5. | templateOptions | object | props for specific components | No | 
-| 6. | Validator | function | sometimes you want to do validation in the real time and not after the next button is clicked, in this case pass the validator function. Validator function would recieve following data in it's argument `index, key, currentData, payload` | No |
-| 7. | required | Boolean | if `required: true` the field cannot be empty i.e button to itterate to the next component will be disable | no | 
+| 6. | Validator | function | sometimes you want to do validation in the real-time and not after the next button is clicked, in this case, pass the validator function. A validator function would receive the following data in its argument `index, key, currentData, payload` | No |
+| 7. | required | Boolean | if `required: true` the field cannot be empty i.e. button to iterate to the next component will be disabled | no | 
 
 
 ### Text Component 
