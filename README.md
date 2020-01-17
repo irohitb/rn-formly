@@ -235,6 +235,7 @@ inputFields Props supports most of the popular component you would need in a for
 5. image,
 6. images
 7. AutoComplete
+8. otp 
 
 ### Structuring your Array Object 
 
@@ -307,11 +308,143 @@ Component level Props are mostly passed in `templateOptions`
   }, 
   ```
   
-  Component level Props are mostly passed in `templateOptions`
-
-##### TemplateOptions keys with value
+##### TemplateOptions key/value
 
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
 | 1. | dateFormat | string | should be either `DDMMYYYY`, or `MMDDYYYY` or `YYYYMMDD` | No |
+
+
+### checkboxes
+
+```
+  {
+    key: "gender", 
+    type: 'checkboxes',
+    label: 'Select your Gender', 
+    helper: '(Optional), Please select a gender', 
+    templateOptions: {
+      options: [
+  {
+  key: 'male',
+  label: 'Male',
+  value: false 
+  },
+  {
+    key: 'female', 
+    label: 'Female',
+    value: false
+  },
+  {
+    key: 'others', 
+    label: 'Others',
+    value: false
+  }
+]
+    }
+  }, 
+  ```
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | options | Array | should contain `key`, `label` and `value` | Yes | None
+
+
+### image (single image)
+
+```
+  {
+    key: 'image',
+    type:'image', 
+    label: "Upload your cover image", 
+    helper: 'You can change your profile pic anytime from settings',
+    templateOptions: {
+     cropHeight: 200,
+     cropWidth: 300
+    }
+  },
+
+```
+
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | cropWidth | number | width of the image user is allowed to crop/select | no | none |
+| 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
+
+
+
+### image (single image)
+
+```
+  {
+    key: 'image',
+    type:'image', 
+    label: "Upload your cover image", 
+    helper: 'You can change your profile pic anytime from settings',
+    templateOptions: {
+     cropHeight: 200,
+     cropWidth: 300
+    }
+  },
+
+```
+
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | cropWidth | number | width of the image user is allowed to crop/select | no | none |
+| 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
+
+
+
+### image (single image)
+
+```
+  {
+    key: 'image',
+    type:'image', 
+    label: "Upload your cover image", 
+    helper: 'You can change your profile pic anytime from settings',
+    templateOptions: {
+     cropHeight: 200,
+     cropWidth: 300
+    }
+  },
+
+```
+
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | cropWidth | number | width of the image user is allowed to crop/select | no | none |
+| 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
+
+### images
+
+```
+  {
+    key: 'image',
+    type:'images', 
+    label: "Upload your cover image", 
+    helper: 'You can change your profile pic anytime from settings',
+    templateOptions: {
+     cropHeight: 200,
+     cropWidth: 300
+    }
+  },
+
+```
+
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | cropWidth | number | width of the images user is allowed to crop/select | no | none |
+| 2. | cropHeight | number | heoght of the images user is allowed to crop/select | no | none |
+
 
