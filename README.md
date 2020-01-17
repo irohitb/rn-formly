@@ -11,6 +11,9 @@ RN-formly  supports plugging in custom validators, loading data asynchronously, 
 
 For Advance user, rn-formly allows you to cuztomise styling of individual componenet as well (see component props below for more information)
 
+### Note
+ Developer of this repo looking for full time interesting oppertunities, [connect on linkedin](https://www.linkedin.com/in/irohitbh/) 
+
 
 ### Screenshots 
  <img src="https://user-images.githubusercontent.com/32276134/72256135-7e162f00-362e-11ea-9500-45b552e27660.png" width=250 height=400> <img src="https://user-images.githubusercontent.com/32276134/72256136-7e162f00-362e-11ea-96ff-6da347fae333.png" width=250 height=400>
