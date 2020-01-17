@@ -375,31 +375,6 @@ Component level Props are mostly passed in `templateOptions`
 | 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
 
 
-
-### image (single image)
-
-```
-  {
-    key: 'image',
-    type:'image', 
-    label: "Upload your cover image", 
-    helper: 'You can change your profile pic anytime from settings',
-    templateOptions: {
-     cropHeight: 200,
-     cropWidth: 300
-    }
-  },
-
-```
-
-##### TemplateOptions key/value
-
-| S.NO | key | type | description | Required  | Default | 
-| ---- | --- | ---- | ----------- | --------  | ------- |
-| 1. | cropWidth | number | width of the image user is allowed to crop/select | no | none |
-| 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
-
-
 ### images
 
 ```
@@ -424,3 +399,48 @@ Component level Props are mostly passed in `templateOptions`
 | 2. | cropHeight | number | heoght of the images user is allowed to crop/select | no | none |
 
 
+### OTP
+
+```
+   {
+    key: 'otp', 
+    type: 'otp', 
+    label: 'Enter OTP',
+    helper: '(optional) but try to enter incorrect date', 
+    templateOptions: {
+      noOfTextInput: 5,
+    }
+  }, 
+
+```
+
+##### TemplateOptions key/value
+
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | noOfTextInput | number | number of character in your otp  | yes | none |
+
+### AutoComplete
+
+```
+{
+    key: 'autoComplete', 
+    type: 'autoComplete', 
+    label: 'Type Programming language',
+    helper: "This is an example of Auto Complete Component, Don't try to make sense out of the returned data",
+    templateOptions: { 
+      asyncFunction: async function (text) {
+        return async data
+      }
+    }
+  }
+```
+
+##### TemplateOptions key/value
+| S.NO | key | type | description | Required  | Default | 
+| ---- | --- | ---- | ----------- | --------  | ------- |
+| 1. | componentProps |  object | Can pass all the props for `TextInput ` | no | 
+| 2. | asyncFunction | async function | this function will recive the input text and should return suggestions accordingly (via making some api call etc)  | yes | none | 
+| 3. | loaderRequired | Boolean | shows loader until user recieves the data from async function | no | false | 
+| 4. | listViewStyle | styling object | styling for the list list view | no | nope |
+| 5. | listTextStyle | styling object | styling for the text in the list view | no | nope |
