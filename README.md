@@ -201,5 +201,20 @@ Validation and Error throwing are done in `inputFields` array. See `inputFeilds`
 | 2. | errorStyle | stylesheet object | none | No | Text Styling for error message | 
 
 
+#### Note 
 
+1. for `stylesheet object` type props. you need to pass props like this 
+
+```
+const styles = StyleSheet.create({
+  someStyle: {
+    ....
+    ....
+  }, 
+})
+```
+
+and then pass `styles.someStyle` in props 
+
+2. For `stylesheet object`, Default `None` does not mean that element won't have any styles, the props provided by user would override the default styling.
 
