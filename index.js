@@ -20,7 +20,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     keyboardAutoOpenForText, 
     inputFields, 
     buttonSelectedStyle, 
-    ProgressBarProps,  
+    ProgressBar,  
     backgroundViewColor, 
     defaultColor, 
     helperTextStyle, 
@@ -60,7 +60,6 @@ import Spinner from 'react-native-loading-spinner-overlay'
     options, 
     multipleSelect, 
     // Image Props
-    imageComponentStyle,
     cropHeight,
     cropWidth,
     //---- Date Format
@@ -94,9 +93,9 @@ import Spinner from 'react-native-loading-spinner-overlay'
   const inputValidator = inputValidatorSelector()
 
   // --- Progress bar ---
-  ProgressBarProps.currentProgress = index 
-  ProgressBarProps.totalNumberOfProgressBars = inputFields.length
-  ProgressBarProps.colorOfProgressBar = ProgressBarProps.colorOfProgressBar || defaultColor
+  ProgressBar.currentProgress = index 
+  ProgressBar.totalNumberOfProgressBars = inputFields.length
+  ProgressBar.colorOfProgressBar = ProgressBar.colorOfProgressBar || defaultColor
 
   // All Functions declareation 
   // --------------------------
@@ -168,8 +167,6 @@ import Spinner from 'react-native-loading-spinner-overlay'
       options={options}
       upsideEmit={onChangeHandler}
       defaultColor={defaultColor}
-      imageComponentStyle={imageComponentStyle}
-      cropHeight={cropHeight}
       />
     ),  
     picker: options === undefined ? null : (
@@ -226,11 +223,11 @@ import Spinner from 'react-native-loading-spinner-overlay'
     <View style={{backgroundColor: backgroundViewColor, height: '100%'}}>  
     <Spinner
       visible={Loading} />
-      <ProgressBar {...ProgressBarProps} />
+      <ProgressBar {...ProgressBar} />
       {/* Back button */}
         {index !== 0 ? (
           <TouchableOpacity onPress={decreaseStateIndex} style={styles.backButton}>
-            <Text style={[styles.backButtonText]}> {'<'} </Text> 
+            <Text style={[styles.backButtonText, backIconStyle]}> {'<'} </Text> 
           </TouchableOpacity> ) : <TouchableOpacity style={styles.nonBackButton}></TouchableOpacity>}
         <View style={styles.renderComponentView}>
           <Text style={[{color: defaultColor}, styles.textStyling, textStyle]}> {label}</Text>
@@ -340,17 +337,16 @@ const styles = StyleSheet.create({
 
 
 SignupFormComponent.propTypes = { 
-  keyboardAutoOpenForText: PropTypes.bool,  
   textStyle: PropTypes.object,
   inputFields: PropTypes.array.isRequired,
-  ProgressBarProps: PropTypes.object, 
+  ProgressBar: PropTypes.object, 
   helperTextStyle: PropTypes.object,
   backgroundViewColor:  PropTypes.string, 
   defaultColor: PropTypes.string,
   onFinish: PropTypes.func,
   //Buttons
   buttonSelectedStyle: PropTypes.object,
-  globalButtonText: PropTypes.string.isRequired,
+  globalButtonText: PropTypes.string,
   buttonSelectedTextStyle: PropTypes.object,
   onButtonClick: PropTypes.func.isRequired,
   buttonNotSelectedStyle: PropTypes.object,
@@ -363,9 +359,10 @@ SignupFormComponent.propTypes = {
 
 SignupFormComponent.defaultProps = {
   keyboardAutoOpenForText: true,
-  ProgressBarProps: {
+  ProgressBar: {
     blink: false,
   },
+  globalButtonText: 'Next',
   backgroundViewColor: 'white',
   defaultColor: 'black', 
   defaultErrorMessage: 'Sorry Something went wrong'
