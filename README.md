@@ -1,4 +1,4 @@
-# Rect native formly documentation 
+# React native formly documentation 
 
 ### About
 
