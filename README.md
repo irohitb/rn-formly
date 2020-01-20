@@ -12,7 +12,7 @@ rn-formly is a light-weight React Native implementation of a formly component.
 
 By using rn-formly you can easily create beautiful forms, signup screens, settings (upcoming in v2) in less than 2 minutes by just passing a JSON. 
 
-RN-formly  supports plugging in custom validators, loading data asynchronously, passing custom errors and includes progress bar to show progress, loader handles safe area and almost all the popular component you would require to build beautiful area
+RN-formly  supports plugging in custom validators, loading data asynchronously, passing custom errors and includes progress bar to show progress, loading spinner,  handles safe area for both iOS and Android and comes with almost all the popular component you would require to build beautiful formly component
 
 For the Advance user, rn-formly allows you to customize the styling of individual component as well (see component props below for more information)
 
