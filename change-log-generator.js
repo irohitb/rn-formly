@@ -17,8 +17,9 @@ const gitRepoUrl = child
 .execSync("git config --get remote.origin.url")
 .toString("utf-8").replace(".git", "").trim()
 const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
+
 // Gettting Package JSON version for which we are creating logs
-const currentVersion = parseFloat(require("./package.json").version);
+const currentVersion = require("./package.json").version);
 let newChangelog = `# Version ${currentVersion} (${
   new Date().toISOString().split("T")[0]
 })\n\n`;

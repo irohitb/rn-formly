@@ -1,11 +1,11 @@
 {
   "name": "rn-formly",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "Creates a beautiful forms for React-Native within minutes with validatos, error handling by passing just JSON",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pn-local": "npm version --no-git-tag-version patch && npm publish --registry http://localhost:4873", 
+    "pn-local": "npm version --no-git-tag-version patch && npm publish --registry http://localhost:4873",
     "publish-npm": "npm version --no-git-tag-version patch && node change-log-generator.js && npm publish"
   },
   "repository": {
