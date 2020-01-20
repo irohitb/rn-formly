@@ -1,10 +1,8 @@
 const child = require("child_process");
 const fs = require("fs");
-
 const output = child
   .execSync(`git log --format=%B%H----DELIMITER----`)
   .toString("utf-8");
-
 // Gives Commit with SHA 
 const commitsArray = output
   .split("----DELIMITER----\n")
@@ -14,18 +12,16 @@ const commitsArray = output
     return { sha, message };
   })
   .filter(commit => Boolean(commit.sha));
-
-
-
+// Get Repo URL
+const gitRepoUrl = child
+.execSync("git config --get remote.origin.url")
+.toString("utf-8").replace(".git", "")
 const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
-// Gettting Package JSON version while Create logs 
-
+// Gettting Package JSON version for which we are creating logs
 const currentVersion = parseFloat(require("./package.json").version);
 let newChangelog = `# Version ${currentVersion} (${
   new Date().toISOString().split("T")[0]
 })\n\n`;
-
-
 const commits = {
   feature: [], 
   feat: [],
@@ -38,8 +34,6 @@ const commits = {
   removed: [],
   miscellaneous: []
 }
-
-
 commitsArray.forEach(commit => {
 const commitHeaderArray = commit.message.match(/.*(?=:)/)
   if (commitHeaderArray) {
@@ -48,14 +42,14 @@ const commitHeaderArray = commit.message.match(/.*(?=:)/)
       commits[commitHeader].push(`* ${commit.message.replace(`${commitHeaderArray[0]}:`, "")} ([${commit.sha.substring(
         0,
         6
-      )}](https://github.com/jackyef/changelog-generator/commit/${
+      )}](${gitRepoUrl}/commit/${
         commit.sha
       }))\n`)
     } else {
       commits.miscellaneous.push(`* ${commit.message.replace(`${commitHeaderArray[0]}:`, "")} ([${commit.sha.substring(
         0,
         6
-      )}](https://github.com/jackyef/changelog-generator/commit/${
+      )}](${gitRepoUrl}/commit/${
         commit.sha
       }))\n`)
     }
@@ -63,13 +57,11 @@ const commitHeaderArray = commit.message.match(/.*(?=:)/)
     commits.miscellaneous.push(`* ${commit.message} ([${commit.sha.substring(
       0,
       6
-    )}](https://github.com/jackyef/changelog-generator/commit/${
+    )}](${gitRepoUrl}/commit/${
       commit.sha
     }))\n`)
   }
 })
-
-
 for (let commitHeader in commits) {
   const commitsArray = commits[commitHeader]
   if (commitsArray.length) {
@@ -80,6 +72,5 @@ for (let commitHeader in commits) {
     newChangelog += '\n';
   }
 }
-
 // prepend the newChangelog to the current one
 fs.writeFileSync("./CHANGELOG.md", `${newChangelog}${currentChangelog}`);
