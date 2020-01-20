@@ -45,14 +45,14 @@ const commitHeaderArray = commit.message.match(/.*(?=:)/)
   if (commitHeaderArray) {
     let commitHeader = commitHeaderArray[0].toLowerCase()
     if (commits.hasOwnProperty(commitHeader)) {
-      commits[commitHeader].push(`* ${commit.message.replace(`${commitHeader}:`, "")} ([${commit.sha.substring(
+      commits[commitHeader].push(`* ${commit.message.replace(`${commitHeaderArray[0]}:`, "")} ([${commit.sha.substring(
         0,
         6
       )}](https://github.com/jackyef/changelog-generator/commit/${
         commit.sha
       }))\n`)
     } else {
-      commits.miscellaneous.push(`* ${commit.message.replace(`${commitHeader}:`, "")} ([${commit.sha.substring(
+      commits.miscellaneous.push(`* ${commit.message.replace(`${commitHeaderArray[0]}:`, "")} ([${commit.sha.substring(
         0,
         6
       )}](https://github.com/jackyef/changelog-generator/commit/${
