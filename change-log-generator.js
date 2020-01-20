@@ -15,7 +15,7 @@ const commitsArray = output
 // Get Repo URL
 const gitRepoUrl = child
 .execSync("git config --get remote.origin.url")
-.toString("utf-8").replace(".git", "")
+.toString("utf-8").replace(".git", "").trim()
 const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
 // Gettting Package JSON version for which we are creating logs
 const currentVersion = parseFloat(require("./package.json").version);
