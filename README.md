@@ -19,9 +19,7 @@ For the Advance user, rn-formly allows you to customize the styling of individua
 
 ### Note
 
- The developer of this repo looking for full-time interesting opportunities, [connect on linkedin](https://www.linkedin.com/in/irohitbh/) or drop an email at irohitbhatia@gmail.com
-
-Also, If you find this repo interesting do not forgot to star it. 
+If you find this repo interesting do not forgot to give it a star. 
 
 ### Screenshots 
  <img src="https://user-images.githubusercontent.com/32276134/72256135-7e162f00-362e-11ea-9500-45b552e27660.png" width=250 height=400> <img src="https://user-images.githubusercontent.com/32276134/72256136-7e162f00-362e-11ea-96ff-6da347fae333.png" width=250 height=400>
