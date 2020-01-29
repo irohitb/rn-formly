@@ -156,7 +156,7 @@ const inputFields = [
       globalButtonText={'Next'}
       onButtonClick={justLogDataFromForms}
       defaultColor={'green'}
-      ProgressBarProps={{
+      progressBarProps={{
         blink: false
       }}
       /> 
@@ -184,7 +184,7 @@ Important Props are highlighted.
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
 | 1. | textStyle | stylesheet object | none | No | Heading text style (style for your `label` key in `inputFields` props) | 
-| 2. | ProgressBar | object | blink: false | No | click here to know more about ProgressBar Component | 
+| 2. | progressBar | object | blink: false | No | click here to know more about ProgressBar Component | 
 | 3. | helperTextStyle | stylesheet object | none | No | Helper text style (style for your `helper` key in `inputFields` )
 | 4. |  backgroundViewColor | string | 'white' | No | background for the view of your form | 
 | **5.** | **defaultColor** | **string**  | **'black'** | **no** | **Formats button color, text color and sub component color accordingly (can be override by passing styles for individual component)** | 

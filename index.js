@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react' 
 import {View, Text, StyleSheet, TouchableOpacity, TextInput, Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
-import ProgressBar from "react-native-form-prorgress"
+import ProgressBar from "react-native-form-progress"
 import {
   DateTyper, 
   CheckBoxes, 
@@ -20,7 +20,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     keyboardAutoOpenForText, 
     inputFields, 
     buttonSelectedStyle, 
-    ProgressBar,  
+    progressBar,  
     backgroundViewColor, 
     defaultColor, 
     helperTextStyle, 
@@ -93,9 +93,9 @@ import Spinner from 'react-native-loading-spinner-overlay'
   const inputValidator = inputValidatorSelector()
 
   // --- Progress bar ---
-  ProgressBar.currentProgress = index 
-  ProgressBar.totalNumberOfProgressBars = inputFields.length
-  ProgressBar.colorOfProgressBar = ProgressBar.colorOfProgressBar || defaultColor
+  progressBar.currentProgress = index 
+  progressBar.totalNumberOfProgressBars = inputFields.length
+  progressBar.colorOfProgressBar = progressBar.colorOfProgressBar || defaultColor
 
   // All Functions declareation 
   // --------------------------
@@ -223,7 +223,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     <View style={{backgroundColor: backgroundViewColor, height: '100%'}}>  
     <Spinner
       visible={Loading} />
-      <ProgressBar {...ProgressBar} />
+      <ProgressBar {...progressBar} />
       {/* Back button */}
         {index !== 0 ? (
           <TouchableOpacity onPress={decreaseStateIndex} style={styles.backButton}>
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
 SignupFormComponent.propTypes = { 
   textStyle: PropTypes.object,
   inputFields: PropTypes.array.isRequired,
-  ProgressBar: PropTypes.object, 
+  progressBar: PropTypes.object, 
   helperTextStyle: PropTypes.object,
   backgroundViewColor:  PropTypes.string, 
   defaultColor: PropTypes.string,
@@ -359,7 +359,7 @@ SignupFormComponent.propTypes = {
 
 SignupFormComponent.defaultProps = {
   keyboardAutoOpenForText: true,
-  ProgressBar: {
+  progressBar: {
     blink: false,
   },
   globalButtonText: 'Next',
