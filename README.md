@@ -40,15 +40,9 @@ RN-Formly use following as peerDependency
 
 
 ```
-npm i react-native-device-info --save
-npm i rn-formly  --save
+npm i react-native-image-crop-picker react-native-device-info rn-formly--save
 ```
 
-And if you intend to use image Components then install `react-native-image-crop-picker`
-
-```
-npm i react-native-image-crop-picker --save
-```
 
 For iOS, If you are using **React Native => 0.60** then simple do 
 
