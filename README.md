@@ -40,7 +40,7 @@ RN-Formly use following as peerDependency
 
 
 ```
-npm i react-native-image-crop-picker react-native-device-info rn-formly--save
+npm i react-native-image-crop-picker react-native-device-info rn-formly --save
 ```
 
 
