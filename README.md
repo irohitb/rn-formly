@@ -6,6 +6,12 @@
 | Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly)|
 | Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/rn-formly) [![npm downloads](https://img.shields.io/npm/dt/rn-formly)](https://www.npmjs.com/package/rn-formly)
 
+### Note
+
+- If you find this repo interesting do not forgot to give it a star. 
+- If you have a feature request than open it on github and feature should be added within 2-7 days (author of the repo would keep you updated)
+- If you find a bug, open an issue on github and author would fix it less than 24 hours
+
 ### About
 
 rn-formly is a light-weight React Native implementation of a formly component. 
@@ -17,9 +23,6 @@ RN-formly  supports plugging in custom validators, loading data asynchronously, 
 For the Advance user, rn-formly allows you to customize the styling of individual component as well (see component props below for more information)
 
 
-### Note
-
-If you find this repo interesting do not forgot to give it a star. 
 
 ### Screenshots 
  <img src="https://user-images.githubusercontent.com/32276134/72256135-7e162f00-362e-11ea-9500-45b552e27660.png" width=250 height=400> <img src="https://user-images.githubusercontent.com/32276134/72256136-7e162f00-362e-11ea-96ff-6da347fae333.png" width=250 height=400>
