@@ -8,9 +8,10 @@
 
 ### Note
 
-- If you find this repo interesting do not forgot to give it a star. 
+- If you find this repo interesting, please give it a start
 - If you have a feature request than open it on github and feature should be added within 2-7 days (author of the repo would keep you updated)
 - If you find a bug, open an issue on github and author would fix it less than 24 hours
+- To get involved, or if you need help in using this repo, ping author diectly on [linkedin](https://www.linkedin.com/in/irohitbh/)
 
 ### About
 
