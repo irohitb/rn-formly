@@ -241,7 +241,7 @@ inputFields Props supports most of the popular components you would need in a fo
 4. [picker]((https://github.com/irohitb/rn-formly#picker))
 5. [image](https://github.com/irohitb/rn-formly#image-single-image),
 6. [images](https://github.com/irohitb/rn-formly#images)
-7. [AutoComplete](AutoComplete)
+7. [AutoComplete](https://github.com/irohitb/rn-formly#AutoComplete)
 8. [otp](https://github.com/irohitb/rn-formly#otp) 
 
 ### Structuring your Array Object 
