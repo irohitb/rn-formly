@@ -164,6 +164,8 @@ const inputFields = [
 
 ```
 
+Example usage of all the component can be seen using this [file](https://github.com/irohitb/formly-example/blob/master/App.js)
+
 ### Required Props 
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
@@ -443,6 +445,24 @@ Component level Props are mostly passed in `templateOptions`
   }
 ```
 
+Where data should be `object Array` containg **id, value, title**
+
+```
+ [{
+    { 
+      id: 1,
+      title: "Javascript",
+      value: "javascript"
+    },
+    { 
+      id: 2,
+      title: "Java",
+      value: "java"
+  },
+}]
+```
+
+Click [here](https://github.com/irohitb/formly-example/blob/master/dummy/autocomplete.js) to see the example da
 ##### TemplateOptions key/value
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
