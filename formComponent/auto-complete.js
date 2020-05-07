@@ -121,11 +121,6 @@ const AutoComplete = (props) => {
 
   const onSelection = (selectedObj) => {
     if(modalOpen) setModelOpen(false)
-    const emitObj = {
-      title: selectedObj.title, 
-      value: selectedObj.value, 
-      id: selectedObj.id
-    }
     upsideEmit(selectedObj)
   }
 
