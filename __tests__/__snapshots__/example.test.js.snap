@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render app components should render text 1`] = `
+<TextInput
+  allowFontScaling={true}
+  onChangeText={[Function]}
+  rejectResponderTermination={true}
+  style={
+    Array [
+      Object {
+        "borderColor": undefined,
+        "color": undefined,
+      },
+      Object {
+        "borderBottomWidth": 1,
+        "fontSize": 24,
+        "justifyContent": "center",
+        "marginTop": 50,
+        "padding": 5,
+        "width": 600,
+      },
+      Array [],
+    ]
+  }
+  underlineColorAndroid="transparent"
+  value="Hello World"
+/>
+`;
