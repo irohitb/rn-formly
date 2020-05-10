@@ -4,9 +4,9 @@
   "description": "Creates a beautiful forms for React-Native within minutes with validatos, error handling by passing just JSON",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "pn-local": "npm version --no-git-tag-version patch && npm publish --registry http://localhost:4873",
-    "publish-npm": "npm version --no-git-tag-version patch && npm publish"
+    "publish-npm": "npm version --no-git-tag-version patch && npm publish",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,12 @@
   "bugs": {
     "url": "https://github.com/irohitb/rn-formly/issues"
   },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "js"
+    ]
+  },
   "homepage": "https://github.com/irohitb/rn-formly#readme",
   "dependencies": {
     "react-native-form-progress": "^1.0.11",
@@ -36,7 +42,17 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "^0.62.2",
-    "react-native-image-crop-picker": "^0.30.0",
-    "react-native-device-info": ">=5.5.7"
+    "react-native-device-info": ">=5.5.7",
+    "react-native-image-crop-picker": "^0.30.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1",
+    "babel-preset-expo": "^8.1.0",
+    "jest": "^26.0.1",
+    "react": "^16.13.1",
+    "react-native-testing-library": "^1.13.2",
+    "react-test-renderer": "^16.13.1"
   }
 }
