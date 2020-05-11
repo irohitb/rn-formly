@@ -6,7 +6,8 @@
 | Build  | [![Build Status](https://travis-ci.com/irohitb/rn-formly.svg?branch=master)](https://travis-ci.com/irohitb/rn-formly)
 | Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly)|
 | Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/rn-formly) [![npm downloads](https://img.shields.io/npm/dt/rn-formly)](https://www.npmjs.com/package/rn-formly)
-| License | [![GitHub](https://img.shields.io/github/license/irohitb/rn-formly)(https://github.com/irohitb/rn-formly/blob/master/LICENSE)]
+| License | [![GitHub](https://img.shields.io/github/license/irohitb/rn-formly)](https://github.com/irohitb/rn-formly/blob/master/LICENSE)
+
 
 ### Note
 
