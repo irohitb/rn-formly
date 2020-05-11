@@ -1,6 +1,7 @@
+Create beautiful React-Native forms within minutes with validator, progress-bar, custom error handling by passing just JSON 
 
+If you find this repo useful, please give it a star on github. 
 
-# React native formly documentation 
 |  | Status |
 | - | - |
 | Build  | [![Build Status](https://travis-ci.com/irohitb/rn-formly.svg?branch=master)](https://travis-ci.com/irohitb/rn-formly)
@@ -8,24 +9,14 @@
 | Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/rn-formly) [![npm downloads](https://img.shields.io/npm/dt/rn-formly)](https://www.npmjs.com/package/rn-formly)
 | License | [![GitHub](https://img.shields.io/github/license/irohitb/rn-formly)](https://github.com/irohitb/rn-formly/blob/master/LICENSE)
 
+## ⭐ Features
 
-### Note
-
-- If you find this repo interesting, please give it a start
-- If you have a feature request than open it on github and feature should be added within 2-7 days (author of the repo would keep you updated)
-- If you find a bug, open an issue on github and author would fix it less than 24 hours
-- To get involved, or if you need help in using this repo, ping author diectly on [linkedin](https://www.linkedin.com/in/irohitbh/)
-
-### About
-
-rn-formly is a light-weight React Native implementation of a formly component. 
-
-By using rn-formly you can easily create beautiful forms, signup screens, settings (upcoming in v2) in less than 2 minutes by just passing a JSON. 
-
-RN-formly  supports plugging in custom validators, loading data asynchronously, passing custom errors, progress bar, loading spinner,  handles safe area for both iOS and Android and comes with almost all the popular component you would require to build amazing forms
-
-For the Advance user, rn-formly allows you to customize the styling of individual component as well (see component props below for more information)
-
+- 10+ fully customisable component ready to be used by passing a json (including support for loading data asynchronously) 
+- Can easily manage Safe Area for devices with notch
+- Ingerated with optional progress bar to show user their progress while filling up a form
+- Allows throwing custom error and data validation
+- Includes loading component 
+- Active support for feature and issue using git issue tracker
 
 
 ### Screenshots 
@@ -510,3 +501,6 @@ Click [here](https://github.com/irohitb/formly-example/blob/master/dummy/autocom
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
 | 1. | options | Array | should contain `key`, `label` and `value` | Yes | None
+
+
+
