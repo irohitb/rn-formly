@@ -58,6 +58,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-native-testing-library": "^1.13.2",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "react-native-device-info": ">=5.5.7",
+    "react-native-image-crop-picker": "^0.30.0"
   }
 }
