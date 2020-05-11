@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {View, Text, StyleSheet, TouchableOpacity, TextInput, Dimensions} from 'react-native'
+import React from 'react'
+import {StyleSheet} from 'react-native'
 import PropTypes from 'prop-types'
 import NextTextInput from 'react-native-next-input'
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react' 
-import {View, Text, StyleSheet, TouchableOpacity, TextInput, Dimensions} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity,  Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
 import ProgressBar from "react-native-form-progress"
 import {

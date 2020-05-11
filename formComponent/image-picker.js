@@ -60,8 +60,7 @@ export const SingleImageSelector = (props) => {
     containerShape, 
     defaultColor,
   } = props
-  
-  const objectCheck = Object.keys(props.value)
+  const objectCheck = props.value ? Object.keys(props.value) : null
   const value = objectCheck && objectCheck.length > 0 ? props.value : null
   const selectImage = async () => {
     try {

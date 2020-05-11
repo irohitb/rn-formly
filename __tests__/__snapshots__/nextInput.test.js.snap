@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render otp component correct should render text like otp 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      },
+      undefined,
+    ]
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="numeric"
+    maxLength={1}
+    numberOfLines={1}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "color": "black",
+          "fontSize": 16,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "textAlign": "center",
+        },
+        Array [
+          Object {
+            "width": 56.25,
+          },
+          Object {
+            "borderBottomWidth": 1,
+            "fontSize": 20,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 50,
+            "textAlign": "center",
+          },
+        ],
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value="1"
+  />
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="numeric"
+    maxLength={1}
+    numberOfLines={1}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "color": "black",
+          "fontSize": 16,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "textAlign": "center",
+        },
+        Array [
+          Object {
+            "width": 56.25,
+          },
+          Object {
+            "borderBottomWidth": 1,
+            "fontSize": 20,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 50,
+            "textAlign": "center",
+          },
+        ],
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value="2"
+  />
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="numeric"
+    maxLength={1}
+    numberOfLines={1}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "color": "black",
+          "fontSize": 16,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "textAlign": "center",
+        },
+        Array [
+          Object {
+            "width": 56.25,
+          },
+          Object {
+            "borderBottomWidth": 1,
+            "fontSize": 20,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 50,
+            "textAlign": "center",
+          },
+        ],
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value="3"
+  />
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="numeric"
+    maxLength={1}
+    numberOfLines={1}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "color": "black",
+          "fontSize": 16,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "textAlign": "center",
+        },
+        Array [
+          Object {
+            "width": 56.25,
+          },
+          Object {
+            "borderBottomWidth": 1,
+            "fontSize": 20,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 50,
+            "textAlign": "center",
+          },
+        ],
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value="4"
+  />
+</View>
+`;
