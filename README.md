@@ -16,7 +16,7 @@ If you find this repo useful, please give it a star on github.
 - Ingerated with optional progress bar to show user their progress while filling up a form
 - Allows throwing custom error and data validation
 - Includes loading component 
-- Active support for feature and issue using git issue tracker
+- Instant support for feature and issue using git issue tracker
 
 
 ### Screenshots 
