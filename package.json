@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "16.13.1",
+    "react": "^16.13.1",
     "react-native": "^0.62.2",
     "react-native-device-info": ">=5.5.7",
     "react-native-image-crop-picker": "^0.32.0"
