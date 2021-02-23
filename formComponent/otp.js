@@ -14,16 +14,13 @@ const styles = StyleSheet.create({
   }
 })
 
-const Otp = (props) => {
-
-  const {
-    noOfTextInput,
-    upsideEmit,
-    value,
-    textInputStyle,
-    inputTextPlaceHolder
-  } = props
-
+const Otp = ({
+  noOfTextInput,
+  upsideEmit,
+  value,
+  textInputStyle,
+  inputTextPlaceHolder
+}) => {
   const onChangeHandler = (dateArray, currentValue, refForTheCurrentValue) => {
     const stringifyArray = dateArray.join('')
     if (stringifyArray.length === noOfTextInput) {
