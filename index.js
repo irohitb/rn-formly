@@ -14,10 +14,8 @@ import {
 } from './formComponent/index'
 import Spinner from 'react-native-loading-spinner-overlay'
 
- const SignupFormComponent = (props) => {
-
-  const {
-    keyboardAutoOpenForText, 
+ const SignupFormComponent = (
+   {
     inputFields, 
     buttonSelectedStyle, 
     progressBar,  
@@ -34,7 +32,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     buttonNotSelectedTextStyle,
     backIconStyle,
     onFinish
-  } = props
+  }) => {
 
   // All the component 
   const [index, setIndex] = useState(0)
@@ -58,7 +56,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
   const {
     templateStyle, 
     options, 
-    multipleSelect, 
+    multipleSelect, //TOOD => implement multiple select
     // Image Props
     cropHeight,
     cropWidth,

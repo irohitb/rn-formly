@@ -1,30 +1,24 @@
 //Everuthi
-import {coloursCode} from './../constants/colors-to-hex'
+import {coloursCode} from '@src/constants'
 
-
-class ColorCalculator {
-  constructor (color) {
-    this.color = color
-    this.colorType = null
-  }
-
-  determineColorIntensity () {
-    let color = this.color
-    if (coloursCode.hasOwnProperty(color)) color = coloursCode[color]
-      // Variables for red, green, blue values
-      let r, g, b, hsp
+  export const DetermineColorIntensity = (userColor: string): 'light' | 'dark' => {
+    let color:RegExpMatchArray | string | number | null = userColor
+    // Variables for red, green, blue values
+    let r:number, g:number, b:number, hsp:number
+    if (coloursCode.hasOwnProperty(color)) {
+        color = coloursCode[color]
+    }
       // Check the format of the color, HEX or RGB?
       if (color.match(/^rgb/)) {
           // If HEX --> store the red, green, blue values in separate variables
-          color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/)
-          r = color[1]
-          g = color[2]
-          b = color[3]
+          color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/) || ''
+          r = parseInt(color[1])
+          g = parseInt(color[2])
+          b = parseInt(color[3])
       } 
       else { 
           // If RGB --> Convert it to HEX: http://gist.github.com/983661
-          color = +("0x" + color.slice(1).replace( 
-          color.length < 5 && /./g, '$&$&'));
+          color = +("0x" + color.slice(1).replace(color.length < 5 && /./g || '', '$&$&'));
           r = color >> 16;
           g = color >> 8 & 255;
           b = color & 255;
@@ -39,8 +33,6 @@ class ColorCalculator {
       if (hsp>127.5)  return 'light';
       else  return 'dark';    
   }
-}
 
-export default ColorCalculator
 
 

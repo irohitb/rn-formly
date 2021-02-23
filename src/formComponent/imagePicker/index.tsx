@@ -1,8 +1,7 @@
-import React, { useState, useEffect} from 'react';
-import ImagePicker from 'react-native-image-crop-picker';
-import {View, Text, StyleSheet, TouchableOpacity, Dimensions, Image} from 'react-native'
-import PropTypes from 'prop-types'
-
+import * as React from 'react';
+import ImagePicker, {Image as ImageType} from 'react-native-image-crop-picker';
+import {View, Text, StyleSheet, TouchableOpacity, Dimensions,  Image, ImageStyle} from 'react-native'
+import {SingleImageProps, MultipleImageProps} from '@src/types'
 
 const styles = StyleSheet.create({
   mainImageContainer: {
@@ -51,29 +50,32 @@ const styles = StyleSheet.create({
   // Multiple Images Styling 
 })
 
-export const SingleImageSelector = (props) => {
-  const {
-    upsideEmit,  
-    cropWidth, 
-    cropHeight, 
-    imageComponentStyle, 
-    containerShape, 
-    defaultColor,
-  } = props
-  const objectCheck = props.value ? Object.keys(props.value) : null
-  const value = objectCheck && objectCheck.length > 0 ? props.value : null
+
+
+export const SingleImageSelector = ({
+  upsideEmit,  
+  cropWidth, 
+  cropHeight, 
+  imageComponentStyle, 
+  defaultColor,
+  value
+}: SingleImageProps) => {
   const selectImage = async () => {
     try {
       const imageDocRecieved = await ImagePicker.openPicker({
           width: cropWidth,
           height: cropHeight,
-          cropping: true
+          cropping: true,
+          multiple: false
         })
+        if (Array.isArray(imageDocRecieved)) {
+          throw new Error("Bug in rn-formly library, Expected single image but recieved multiple Image")
+        }
         upsideEmit(imageDocRecieved)  
       } catch (error) {
+        throw new Error(error)
       }
   }
-
   if (!value) {
     return (
       <View style={styles.mainImageContainer}>
@@ -96,48 +98,37 @@ export const SingleImageSelector = (props) => {
 }
 
 
-SingleImageSelector.propTypes = {
-  upsideEmit: PropTypes.func.isRequired,
-  cropHeight: PropTypes.number,
-  cropWidth: PropTypes.number, 
-  imageComponentStyle: PropTypes.object, 
-  defaultColor: PropTypes.string, 
-  value: PropTypes.object
-}
 
-
-export const MultipleImageSelector = (props) => {
+export const MultipleImageSelector = ({upsideEmit,  
+  cropWidth, 
+  cropHeight, 
+  imageComponentStyle, 
+  defaultColor,
+  maximumNoOfImages,
+  value
+  }:MultipleImageProps) => {
   //Filling objects with null array 
-  const {
-    upsideEmit,  
-    cropWidth, 
-    cropHeight, 
-    imageComponentStyle, 
-    containerShape, 
-    defaultColor,
-    maximumNoOfImages
-  } = props
 
-  const value = props.value && Array.isArray(props.value) ? props.value :  Array(maximumNoOfImages ? maximumNoOfImages: 9).fill(null)
-  const selectImage = async (index) => {
+  const imageValue = value && Array.isArray(value) ? value :  Array(maximumNoOfImages ? maximumNoOfImages: 9).fill(null)
+  const selectImage = async (index:number) => {
     try {
       const imageDocRecieved = await ImagePicker.openPicker({
           width: cropWidth,
           height: cropHeight,
           cropping: true
         })
-        const currentImageDoc = [...value]
+        const currentImageDoc = [...imageValue]
         currentImageDoc[index] = imageDocRecieved
         upsideEmit(currentImageDoc) 
       } catch (error) {
-        console.warn(error)
+        throw new Error(error)
       }
     }
 
   return (
     <View style={styles.mainImageContainer}>
       <View style={styles.multipleImageContainerSubChild}>
-        {value.map((el, index) => {
+        {imageValue.map((el, index) => {
           if (el) {
             return (
             <TouchableOpacity 
@@ -162,16 +153,3 @@ export const MultipleImageSelector = (props) => {
     </View>
   )
 }
-
-
-MultipleImageSelector.propTypes = {
-  upsideEmit: PropTypes.func.isRequired,
-  cropHeight: PropTypes.number,
-  cropWidth: PropTypes.number, 
-  imageComponentStyle: PropTypes.object, 
-  defaultColor: PropTypes.string, 
-  value: PropTypes.array,
-  maximumNoOfImages: PropTypes.number
-}
-
-

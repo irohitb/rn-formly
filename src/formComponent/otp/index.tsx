@@ -1,7 +1,7 @@
-import React from 'react'
-import {StyleSheet} from 'react-native'
-import PropTypes from 'prop-types'
+import * as React from 'react'
+import {StyleSheet, TextStyle} from 'react-native'
 import NextTextInput from 'react-native-next-input'
+import {OTPprops} from '@src/types'
 
 const styles = StyleSheet.create({
   textInputStyle: {
@@ -14,18 +14,33 @@ const styles = StyleSheet.create({
   }
 })
 
+interface Props  {
+  noOfTextInput: number
+  upsideEmit: (values: Array<string>, value:string, refForTheCurrentValue:number) => void,
+  value: Array<string>,
+  textInputStyle?:  TextStyle
+  inputTextPlaceHolder?: Array<string>
+}
+
 const Otp = ({
   noOfTextInput,
   upsideEmit,
   value,
   textInputStyle,
   inputTextPlaceHolder
-}) => {
-  const onChangeHandler = (dateArray, currentValue, refForTheCurrentValue) => {
+}:Props) => {
+
+  const onChangeHandler = (dateArray:Array<string>, currentValue:string, refForTheCurrentValue:number) => {
     const stringifyArray = dateArray.join('')
     if (stringifyArray.length === noOfTextInput) {
-      upsideEmit(dateArray)
+      upsideEmit(dateArray, currentValue, refForTheCurrentValue)
     }
+  }
+
+  const textStyles = {
+    ...styles.textInputStyle
+    ...textInputStyle, 
+
   }
 
   return (
@@ -33,20 +48,12 @@ const Otp = ({
     <NextTextInput
     onChangeValue={onChangeHandler}
     noOfTextInput={noOfTextInput}
-    textInputStyle={[styles.textInputStyle, textInputStyle]}
+    textInputStyle={textStyles}
     placeholder={inputTextPlaceHolder}
     value={value}
   />
    </>
   )
 }
-
-Otp.propTypes = {
-  noOfTextInput: PropTypes.number.isRequired,
-  upsideEmit: PropTypes.func.isRequired,
-  value: PropTypes.array,
-  textInputStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
-}
-
 
 export default Otp

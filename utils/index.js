@@ -1,1 +1,0 @@
-export {default as ColorCalculator} from './Colour-Calculator'

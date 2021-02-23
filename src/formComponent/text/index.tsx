@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react' 
-import PropTypes from 'prop-types'
+import * as React from 'react' 
 import {TextInput, StyleSheet, Dimensions} from 'react-native'
+import {TextInputProps} from '@src/types'
 
 const styles = StyleSheet.create({
   defaultTextInputStyle: {
-    width: 'auto',
     marginTop: 50,
     padding: 5,
     justifyContent: 'center',
@@ -14,37 +13,30 @@ const styles = StyleSheet.create({
   }
 })
 
-export const InputText = (props) => {  
-  const {
-    value,
-    textInputStyle,
-    defaultColor,
-    upsideEmit,
-    ...rest
-  } = props
-  
-  const onChangeHandler = (text) => {
+export const InputText = ({
+  value,
+  textInputStyle,
+  defaultColor,
+  upsideEmit,
+  ...rest
+}: TextInputProps) => {  
+
+  const onChangeHandler = (text:string) => {
     upsideEmit(text)
     return 
   }
   return (
     <>
       <TextInput  
-      {...rest}
       style={[{color: defaultColor, borderColor: defaultColor}, styles.defaultTextInputStyle, textInputStyle]}
       onChangeText={text => onChangeHandler(text)}
       value={value}
+      {...rest}
       />
     </>
   )
 }
 
-InputText.propTypes = {
-  value:  PropTypes.string, 
-  upsideEmit: PropTypes.func.isRequired,
-  textInputStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  defaultColor: PropTypes.string
-}
 
 
 

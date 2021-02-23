@@ -16,6 +16,10 @@
     "target": "esnext",
     "resolveJsonModule": true,
     "outDir": "./lib",
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*/index", "src/*"]
+    }
   }
 }
