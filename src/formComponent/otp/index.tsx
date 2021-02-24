@@ -1,6 +1,6 @@
 import * as React from 'react'
 import NextTextInput from 'react-native-next-input'
-import {OTPprops} from '@src/types'
+import {OTPprops} from '@src/types/formComponents'
 import styles from './style'
 
 const Otp = ({
@@ -8,7 +8,8 @@ const Otp = ({
   upsideEmit,
   value,
   textInputStyle,
-  inputTextPlaceHolder
+  inputTextPlaceHolder,
+  ...rest
 }:OTPprops) => {
 
   const onChangeHandler = (dateArray:Array<string>, currentValue:string, refForTheCurrentValue:number) => {
@@ -31,6 +32,7 @@ const Otp = ({
     textInputStyle={textStyles}
     placeholder={inputTextPlaceHolder}
     value={value}
+    {...rest}
   />
    </>
   )

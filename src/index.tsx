@@ -1,17 +1,15 @@
-import React, {useState, useEffect} from 'react' 
+import * as React from 'react' 
 import {View, Text, StyleSheet, TouchableOpacity,  Dimensions} from 'react-native'
-import PropTypes from 'prop-types'
 import ProgressBar from "react-native-form-progress"
 import {
   DateTyper, 
   CheckBoxes, 
-  PickerAtPosition, 
   SingleImageSelector,
   MultipleImageSelector, 
   Otp,
   InputText, 
   AutoComplete
-} from './formComponent/index'
+} from '@src/formComponent/index'
 import Spinner from 'react-native-loading-spinner-overlay'
 
  const SignupFormComponent = (
@@ -35,11 +33,11 @@ import Spinner from 'react-native-loading-spinner-overlay'
   }) => {
 
   // All the component 
-  const [index, setIndex] = useState(0)
-  const [payload, setPayloadData] = useState({})
-  const [Loading, toggleLoadingData] = useState(false)
-  const [Error, setErrorData] = useState({status: false, message: ''})
-  const [buttonDisable, toggleButtonDisable] = useState(true)
+  const [index, setIndex] = React.useState(0)
+  const [payload, setPayloadData] = React.useState({})
+  const [Loading, toggleLoadingData] = React.useState(false)
+  const [Error, setErrorData] = React.useState({status: false, message: ''})
+  const [buttonDisable, toggleButtonDisable] = React.useState(true)
   // Current Component based on indux
   const currentComponent = inputFields[index]
   const {
@@ -48,7 +46,8 @@ import Spinner from 'react-native-loading-spinner-overlay'
     label, 
     helper, 
     buttonText, 
-    validator
+    validator, 
+    defaultValue
   } = currentComponent
   let {required} = currentComponent
   const templateOptions =  currentComponent.templateOptions || {}
@@ -150,7 +149,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
         textInputStyle={templateStyle}
         defaultColor={defaultColor}
         upsideEmit={text => onChangeHandler(text)}
-        value={payload[key] ? `${payload[key]}` : ''} 
+        value={payload[key] || defaultValue || ''} 
       />
     ),
     dateTyper: (
@@ -167,13 +166,6 @@ import Spinner from 'react-native-loading-spinner-overlay'
       defaultColor={defaultColor}
       />
     ),  
-    picker: options === undefined ? null : (
-      <PickerAtPosition 
-      options={options}
-      upsideEmit={onChangeHandler} 
-      value={payload[key] ? `${payload[key]}` : ''}
-      />
-    ),
     image:  (
       <SingleImageSelector
       upsideEmit={onChangeHandler}
@@ -194,6 +186,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     ), 
     otp: noOfTextInput === undefined ? null : (
       <Otp
+        {}
         noOfTextInput={noOfTextInput}
         upsideEmit={onChangeHandler}
         value={Array.isArray(payload[key]) ? [...payload[key]] : null}
@@ -244,93 +237,6 @@ import Spinner from 'react-native-loading-spinner-overlay'
     </View>
   )
 }
-
-
-const styles = StyleSheet.create({
-  mainView: {
-    flex: 1
-  }, 
-  btnDefualtStyle: {
-    color: 'green',
-    backgroundColor: 'white', 
-    width: 200,
-    height: 50
-  }, 
-  renderComponentView: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center', 
-    justifyContent: 'center',
-    marginTop: 30,
-  }, 
-  textStyling: {
-    fontSize: 28,
-    fontWeight: 'bold'
-  }, 
-  defaultTextInputStyle: {
-    width: 'auto',
-    marginTop: 50,
-    padding: 5,
-    justifyContent: 'center',
-    borderBottomWidth: 1, 
-    width: Dimensions.get('window').width * 0.8,
-    fontSize: 24
-  }, 
-  subText: {
-    fontWeight: "300", 
-    marginTop: 50, 
-    fontSize: 16,
-    width: Dimensions.get('window').width * 0.8,
-    textAlign: 'center',
-    color: '#757575'
-  }, 
-  defaultButton: {
-    marginTop: 50,
-    borderRadius: 20,
-    width: Dimensions.get('window').width * 0.8,
-    borderWidth: 1, 
-    padding: 5, 
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: "center",
-  }, 
-  defaultButtonText: {
-    fontSize: 25,
-    fontWeight: 'bold'
-  }, 
-  errorColor: {
-    marginTop: 20, 
-    color: 'red',
-    fontSize: 14,
-    fontWeight: 'bold'
-  }, 
-  nextInputStyle: {
-    textAlign: 'center', 
-    marginLeft: 5, 
-    marginRight: 5, 
-    fontSize: 20,
-    borderBottomWidth: 1,
-    marginTop: 50
-  }, 
-  defaultButtonNotSelected: {
-    color: '#9E9E9E',
-    borderColor: '#9E9E9E'
-  }, 
-  backButton: {
-    display: 'flex', 
-    flexDirection: 'row', 
-    justifyContent: 'flex-start',
-    marginTop: 10, 
-    marginLeft: 10
-  },
-  backButtonText: {
-    fontSize: 28,
-    color: '#BDBDBD'
-  },
-  nonBackButton: {
-    marginTop: 38 // Margin top here is 38 because our back button style have margin top 10 and font size 28 (10+28) 
-  }
-})
 
 
 

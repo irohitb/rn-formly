@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ImagePicker from 'react-native-image-crop-picker';
 import {View, Text, TouchableOpacity,  Image} from 'react-native'
-import {SingleImageProps, MultipleImageProps} from '@src/types'
+import {SingleImageProps, MultipleImageProps} from '@src/types/formComponents'
 import styles from './style'
 
 export const SingleImageSelector = ({

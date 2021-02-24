@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   ActivityIndicator
 } from 'react-native'
-import {AutoCompleteProps, AutoCompleteObj} from '@src/types'
+import {AutoCompleteProps, AutoCompleteObj} from '@src/types/formComponents'
 import debounce from '@src/utils/debouncing'
 import styles from './styles'
 

@@ -1,6 +1,6 @@
 import * as React from 'react' 
 import {TextInput} from 'react-native'
-import {TextInputProps} from '@src/types'
+import {TextInputProps} from '@src/types/formComponents'
 import styles from './style'
 
 

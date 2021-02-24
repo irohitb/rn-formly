@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import {determineColorIntensity} from '@src/utils/colors'
-import {SignupCheckBoxesProps} from '@src/types/index'
+import {SignupCheckBoxesProps} from '@src/types/formComponents/ind'
 import styles from './style'
  
 

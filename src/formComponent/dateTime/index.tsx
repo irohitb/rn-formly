@@ -1,7 +1,7 @@
 import * as React from 'react' 
 import styles from './styles'
 import NextTextInput from 'react-native-next-input'
-import {DateTyperProps} from '@src/types'
+import {DateTyperProps} from '@src/types/formComponents'
 
 const ERROR_DEFAULT_MESSAGE = 'Invalid Date, Please check the entered date again'
 
@@ -32,7 +32,8 @@ const DateTyper = ({
   dateFormat='DDMMYYYY', 
   textInputStyle, 
   upsideEmit,
-  value=""
+  value="",
+  ...rest
 }: DateTyperProps) => {
   if (value.length > 8) {
     console.warn("Value supplied for data Typer might be incorrect")

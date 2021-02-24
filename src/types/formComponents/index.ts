@@ -1,5 +1,6 @@
 import {TextInput, ViewStyle, TextStyle, ImageStyle} from 'react-native'
 import {Image as ImageType} from 'react-native-image-crop-picker';
+import NextTextInput from 'react-native-next-input'
 
 interface TextBaseProps {
     value?:  string, 
@@ -11,20 +12,22 @@ interface TextBaseProps {
 export type TextInputProps = TextBaseProps & TextInput
 
 
-export interface OTPprops  {
+export interface OTPBaseProps  {
     noOfTextInput: number
     upsideEmit: (values: Array<string>, value:string, refForTheCurrentValue:number) => void,
     value: Array<string>,
     textInputStyle?:  TextStyle
     inputTextPlaceHolder?: Array<string>
-  }
+}
+
+export type OTPprops = OTPBaseProps & typeof NextTextInput
 
 export interface ImageBaseProps {
     cropHeight?: number,
     cropWidth?: number, 
     imageComponentStyle: ImageStyle, 
     defaultColor: string, 
-  }
+}
   
 
   export interface SingleImageProps extends ImageBaseProps {
@@ -66,12 +69,16 @@ export interface ImageBaseProps {
 
   export type AutoCompleteProps = AutoCompleteBaseProps & TextInput
 
-  export interface DateTyperProps {
-    dateFormat?: 'DDMMYYYY' | 'MMDDYYYY' | 'YYYYMMDD'
+  export type DateSupportedFormats = 'DDMMYYYY' | 'MMDDYYYY' | 'YYYYMMDD'
+
+  export interface DateTyperBase {
+    dateFormat?:DateSupportedFormats
     textInputStyle?: TextStyle,
     upsideEmit: (values: Array<string>, value:string, refForTheCurrentValue:number) => void,
     value?: string | Array<string>
   }
+
+  export type DateTyperProps = DateTyperBase & typeof NextTextInput
 
   interface PickerCheckBoxOptions {
     key: string,
