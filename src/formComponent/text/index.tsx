@@ -1,17 +1,8 @@
 import * as React from 'react' 
-import {TextInput, StyleSheet, Dimensions} from 'react-native'
+import {TextInput} from 'react-native'
 import {TextInputProps} from '@src/types'
+import styles from './style'
 
-const styles = StyleSheet.create({
-  defaultTextInputStyle: {
-    marginTop: 50,
-    padding: 5,
-    justifyContent: 'center',
-    borderBottomWidth: 1, 
-    width: Dimensions.get('window').width * 0.8,
-    fontSize: 24
-  }
-})
 
 export const InputText = ({
   value,
