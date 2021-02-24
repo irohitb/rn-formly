@@ -38,9 +38,8 @@ const Otp = ({
   }
 
   const textStyles = {
-    ...styles.textInputStyle
-    ...textInputStyle, 
-
+    ...styles.textInputStyle,
+    ...textInputStyle
   }
 
   return (
