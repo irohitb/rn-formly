@@ -35,7 +35,7 @@
   "homepage": "https://github.com/irohitb/rn-formly#readme",
   "dependencies": {
     "react-native-form-progress": "^1.0.11",
-    "react-native-image-crop-picker": "^0.32.0",
+    "react-native-image-crop-picker": "^0.36.0",
     "react-native-loading-spinner-overlay": "^1.1.0",
     "react-native-next-input": "^0.10.3"
   },
@@ -44,7 +44,7 @@
     "react": "^16.13.1",
     "react-native": "^0.62.2",
     "react-native-device-info": ">=5.5.7",
-    "react-native-image-crop-picker": "^0.32.0"
+    "react-native-image-crop-picker": "^0.36.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -60,6 +60,6 @@
     "react-native-testing-library": "^6.0.0",
     "react-test-renderer": "^16.13.1",
     "react-native-device-info": ">=5.5.7",
-    "react-native-image-crop-picker": "^0.32.0"
+    "react-native-image-crop-picker": "^0.36.0"
   }
 }
