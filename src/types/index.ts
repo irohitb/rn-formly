@@ -72,3 +72,21 @@ export interface ImageBaseProps {
     upsideEmit: (values: Array<string>, value:string, refForTheCurrentValue:number) => void,
     value?: string | Array<string>
   }
+
+  interface PickerCheckBoxOptions {
+    key: string,
+    label: string,
+    value: boolean
+  }
+
+  export interface SignupCheckBoxesProps {
+    options: PickerCheckBoxOptions[],
+    multipleSelect: boolean, 
+    selectedStyle: TextStyle,
+    unselectedStyle: TextStyle 
+    selectedStyleText: TextStyle, 
+    unselectedStyleText: TextStyle,
+    defaultColor: string,
+    upsideEmit: (val: PickerCheckBoxOptions[]) => void
+  }
+  

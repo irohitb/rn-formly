@@ -1,7 +1,7 @@
 //Everuthi
 import {coloursCode} from '@src/constants'
 
-  export const DetermineColorIntensity = (userColor: string): 'light' | 'dark' => {
+  export const determineColorIntensity = (userColor: string): 'light' | 'dark' => {
     let color:RegExpMatchArray | string | number | null = userColor
     // Variables for red, green, blue values
     let r:number, g:number, b:number, hsp:number

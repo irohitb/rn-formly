@@ -1,49 +1,29 @@
-import React, {useState} from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
-import {ColorCalculator} from './../utils/index'
+import {determineColorIntensity} from '@src/utils/colors'
+import {SignupCheckBoxesProps} from '@src/types/index'
+import styles from './style'
+ 
 
-// TODO: Checkbox scroll View implementation 
-const styles = StyleSheet.create({
-  boxStyle: {
-    marginTop: 50,
-    borderRadius: 20,
-    width: Dimensions.get('window').width * 0.8,
-    borderWidth: 1, 
-    padding: 5, 
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: "center",
-    alignItems: "center",
-    height: 50
-  }, 
-  boxText: {
-    fontSize: 20
-  }, 
-  selectedStyle: {
-    backgroundColor: 'black',
-    borderColor: 'white'
-  }, 
-  selectedStyleText: {
-    color: 'white'
-  }, 
-  unselectedStyle: {
-    borderColor: '#9E9E9E'
-  },
-  unselectedStyleText: {
-    color: '#9E9E9E'
-  }
-})
+interface Color {
+  color?: string
+  backgroundColor?: string
+}
 
+const signupCheckBoxes = ({
+  selectedStyleText, 
+  unselectedStyleText, 
+  selectedStyle, 
+  unselectedStyle, 
+  upsideEmit, 
+  defaultColor,
+  options,
+  multipleSelect=false
+}:SignupCheckBoxesProps) => {
 
-const signupCheckBoxes = (props) => {
-  const { options, multipleSelect} = props
-  const {selectedStyleText, unselectedStyleText, selectedStyle, unselectedStyle, upsideEmit, defaultColor} = props
-  let colorIntensityView, colorIntensityText
-
+  let colorIntensityView:Color, colorIntensityText:Color
   if (defaultColor) {
-    const initColorCalculator = new ColorCalculator(defaultColor)
-    const colorIntensity = initColorCalculator.determineColorIntensity
+    const colorIntensity = determineColorIntensity(defaultColor)
     colorIntensityView = {backgroundColor: defaultColor}
     if (colorIntensity === 'light') {
       colorIntensityText = {color:'#37474F'}
@@ -58,11 +38,18 @@ const signupCheckBoxes = (props) => {
       return element
     })
 
-  const [state, setState] = useState(fixedOptions)
-
+  const [state, setState] = React.useState(fixedOptions)
+  const componentDidMount = React.useRef(false)
   
+  React.useEffect(() => {
+    if (!componentDidMount.current) {
+      componentDidMount.current = true
+    } else {
+      upsideEmit(state)
+    }
+  }, [state])
 
-  const toggleState = (index) => {
+  const toggleState = (index:number) => {
     let copyState = [...state]
     const previousState = copyState[index]['value']
     if (multipleSelect) {
@@ -74,8 +61,8 @@ const signupCheckBoxes = (props) => {
     } 
     copyState[index]['value'] = !previousState 
     setState(copyState)
-    upsideEmit(copyState)
   }
+
 
 
   return (
@@ -103,22 +90,6 @@ const signupCheckBoxes = (props) => {
     </View>
   )
 }
-
-signupCheckBoxes.propTypes = {
-  options: PropTypes.array.isRequired,
-  multipleSelect: PropTypes.bool, 
-  selectedStyle: PropTypes.object,
-  unselectedStyle: PropTypes.object, 
-  selectedStyleText: PropTypes.object, 
-  unselectedStyleText: PropTypes.object, 
-  defaultColor: PropTypes.string,
-  upsideEmit: PropTypes.func.isRequired
-}
-
-signupCheckBoxes.defaultProps = {
-  multipleSelect: false
-}
-
 
 
 export default signupCheckBoxes
