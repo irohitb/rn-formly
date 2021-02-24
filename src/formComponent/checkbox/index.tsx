@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import {determineColorIntensity} from '@src/utils/colors'
-import {SignupCheckBoxesProps} from '@src/types/formComponents/ind'
+import {SignupCheckBoxesProps} from '@src/types/formComponents'
 import styles from './style'
  
 
@@ -18,7 +18,8 @@ const signupCheckBoxes = ({
   upsideEmit, 
   defaultColor,
   options,
-  multipleSelect=false
+  multipleSelect=false,
+  value
 }:SignupCheckBoxesProps) => {
 
   let colorIntensityView:Color, colorIntensityText:Color
@@ -38,7 +39,7 @@ const signupCheckBoxes = ({
       return element
     })
 
-  const [state, setState] = React.useState(fixedOptions)
+  const [state, setState] = React.useState(value && value.length > 0 ? value : fixedOptions)
   const componentDidMount = React.useRef(false)
   
   React.useEffect(() => {
@@ -52,8 +53,9 @@ const signupCheckBoxes = ({
   const toggleState = (index:number) => {
     let copyState = [...state]
     const previousState = copyState[index]['value']
-    if (multipleSelect) {
-      // Setting all other values as false, since the array for checkbox won't in normal scenario be big, we can just itterate and set it to false
+    if (!multipleSelect) {
+      // Setting all other values as false, 
+      // since the array for checkbox won't in normal scenario be big, we can just itterate and set it to false
       copyState = copyState.map(element => {
         element.value = false
         return element
@@ -67,7 +69,7 @@ const signupCheckBoxes = ({
 
   return (
     <View>
-    {state.map((option, index) => {
+    {state.map((option, index:number) => {
       if (!option.value) {
       return (
             <TouchableOpacity 

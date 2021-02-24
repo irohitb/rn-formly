@@ -9,7 +9,7 @@ interface TextBaseProps {
     defaultColor: string
 }
 
-export type TextInputProps = TextBaseProps & TextInput
+export type TextInputProps = TextBaseProps & Partial<TextInput>
 
 
 export interface OTPBaseProps  {
@@ -20,7 +20,7 @@ export interface OTPBaseProps  {
     inputTextPlaceHolder?: Array<string>
 }
 
-export type OTPprops = OTPBaseProps & typeof NextTextInput
+export type OTPprops = OTPBaseProps & Partial<typeof NextTextInput>
 
 export interface ImageBaseProps {
     cropHeight?: number,
@@ -48,7 +48,7 @@ export interface ImageBaseProps {
       [key:string]: any
   }
 
-  interface ErrorMessage {
+  export interface ErrorMessage {
     message: string, 
     [key:string]: any
   }
@@ -67,7 +67,7 @@ export interface ImageBaseProps {
     debouncingEnable?: boolean
   }
 
-  export type AutoCompleteProps = AutoCompleteBaseProps & TextInput
+  export type AutoCompleteProps = AutoCompleteBaseProps & Partial<TextInput>
 
   export type DateSupportedFormats = 'DDMMYYYY' | 'MMDDYYYY' | 'YYYYMMDD'
 
@@ -78,9 +78,9 @@ export interface ImageBaseProps {
     value?: string | Array<string>
   }
 
-  export type DateTyperProps = DateTyperBase & typeof NextTextInput
+  export type DateTyperProps = DateTyperBase & Partial<typeof NextTextInput>
 
-  interface PickerCheckBoxOptions {
+ export interface PickerCheckBoxOptions {
     key: string,
     label: string,
     value: boolean
@@ -94,6 +94,7 @@ export interface ImageBaseProps {
     selectedStyleText: TextStyle, 
     unselectedStyleText: TextStyle,
     defaultColor: string,
+    value?: PickerCheckBoxOptions[]
     upsideEmit: (val: PickerCheckBoxOptions[]) => void
   }
   
