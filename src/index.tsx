@@ -55,7 +55,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
   const {
     templateStyle, 
     options, 
-    multipleSelect, //TOOD => implement multiple select
+    multipleSelect,
     // Image Props
     cropHeight,
     cropWidth,
@@ -154,6 +154,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     ),
     dateTyper: (
       <DateTyper
+      {...componentProps}
       textInputStyle={[{color: defaultColor, width: (Dimensions.get('window').width * 0.6)/8 }, styles.nextInputStyle, templateStyle]} 
       upsideEmit={onChangeHandler}
       dateFormat={dateFormat}
@@ -164,6 +165,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
       options={options}
       upsideEmit={onChangeHandler}
       defaultColor={defaultColor}
+      multipleSelect={multipleSelect}
       />
     ),  
     image:  (
@@ -186,7 +188,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     ), 
     otp: noOfTextInput === undefined ? null : (
       <Otp
-        {}
+        {...componentProps}
         noOfTextInput={noOfTextInput}
         upsideEmit={onChangeHandler}
         value={Array.isArray(payload[key]) ? [...payload[key]] : null}

@@ -25,7 +25,7 @@ export type OTPprops = OTPBaseProps & Partial<typeof NextTextInput>
 export interface ImageBaseProps {
     cropHeight?: number,
     cropWidth?: number, 
-    imageComponentStyle: ImageStyle, 
+    imageComponentStyle?: ImageStyle, 
     defaultColor: string, 
 }
   
@@ -59,7 +59,7 @@ export interface ImageBaseProps {
     defaultColor?: string,
     value: AutoCompleteObj
     asyncFunction: (val:string) => Promise<AutoCompleteObj[]>,
-    textInputStyle: TextStyle,
+    textInputStyle?: TextStyle,
     loaderRequired?: boolean,
     listTextStyle?: TextStyle
     listViewStyle?:ViewStyle
@@ -88,11 +88,11 @@ export interface ImageBaseProps {
 
   export interface SignupCheckBoxesProps {
     options: PickerCheckBoxOptions[],
-    multipleSelect: boolean, 
-    selectedStyle: TextStyle,
-    unselectedStyle: TextStyle 
-    selectedStyleText: TextStyle, 
-    unselectedStyleText: TextStyle,
+    multipleSelect?: boolean, 
+    selectedStyle?: ViewStyle,
+    unselectedStyle?: ViewStyle 
+    selectedStyleText?: TextStyle, 
+    unselectedStyleText?: TextStyle,
     defaultColor: string,
     value?: PickerCheckBoxOptions[]
     upsideEmit: (val: PickerCheckBoxOptions[]) => void
