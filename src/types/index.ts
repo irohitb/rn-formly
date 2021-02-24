@@ -1,4 +1,3 @@
-import { AutoComplete } from '@src/formComponent';
 import {TextInput, ViewStyle, TextStyle, ImageStyle} from 'react-native'
 import {Image as ImageType} from 'react-native-image-crop-picker';
 
@@ -46,14 +45,14 @@ export interface ImageBaseProps {
       [key:string]: any
   }
 
-  interface AutocompleteErrorMessage {
+  interface ErrorMessage {
     message: string, 
     [key:string]: any
   }
 
   
   export interface AutoCompleteBaseProps { 
-    upsideEmit: (val: AutoCompleteObj | null | string, selection: boolean, errorMessage?: AutocompleteErrorMessage) => void,
+    upsideEmit: (val: AutoCompleteObj | null | string, selection: boolean, errorMessage?: ErrorMessage) => void,
     defaultColor?: string,
     value: AutoCompleteObj
     asyncFunction: (val:string) => Promise<AutoCompleteObj[]>,
@@ -66,3 +65,10 @@ export interface ImageBaseProps {
   }
 
   export type AutoCompleteProps = AutoCompleteBaseProps & TextInput
+
+  export interface DateTyperProps {
+    dateFormat?: 'DDMMYYYY' | 'MMDDYYYY' | 'YYYYMMDD'
+    textInputStyle?: TextStyle,
+    upsideEmit: (values: Array<string>, value:string, refForTheCurrentValue:number) => void,
+    value?: string | Array<string>
+  }
