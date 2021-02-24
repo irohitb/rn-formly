@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import * as React from 'react'
 import {
   View, 
   Text, 
@@ -10,57 +10,12 @@ import {
   ActivityIndicator
 } from 'react-native'
 import {AutoCompleteProps, AutoCompleteObj} from '@src/types'
-
+import debounce from '@src/utils/debouncing'
+import styles from './styles'
 
 const DEFAULT_ERROR_MESSAGE = 'Error While Loading the data'
 
-const styles = StyleSheet.create({
-  defaultTextInputStyle: {
-    marginTop: 50,
-    padding: 5,
-    justifyContent: 'center',
-    borderBottomWidth: 1, 
-    width: Dimensions.get('window').width * 0.8,
-    fontSize: 24,
-    marginBottom: 20
-  }, 
-  modelOpenViewMain: {
-    zIndex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor:'rgba(0,0,0,0.7)',
-    flex: 1,
-    display: 'flex', 
-    flexDirection: 'column', 
-    alignItems: 'center'
-  },
-  modelOpenViewSub: {
-    backgroundColor:'rgba(255,255,255, 0.9)',
-    display: 'flex', 
-    flexDirection: 'column',
-    alignItems: 'center',
-    height: Dimensions.get('window').height*0.4,
-    width: Dimensions.get('window').width * 0.9,
-    paddingBottom: 10,
-    marginTop: Dimensions.get('window').height * 0.1
-  }, 
-  flatlistIndividualComponent: {
-    height: 30, 
-    marginTop: 20,
-    paddingRight: 10
-  }, 
-  flatListIndividualComponentText: {
-    fontSize: 21
-  }, 
-  loadingView: {
-    display: 'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'center', 
-    alignItems: 'center',
-    height: '50%'
-  }
-})
+
 
 interface layoutProperties {
   width: number,
@@ -89,19 +44,20 @@ const AutoComplete = ({
   debouncingEnable=true,
   ...rest
 }: AutoCompleteProps) => {
-  let parentViewRef = React.useRef(null)
-  const [state, setState] = useState<IState>({
+  let parentViewRef = React.useRef()  as React.MutableRefObject<TextInput>;
+  const [state, setState] = React.useState<IState>({
     layoutProperties: null, 
     modalOpen: false, 
     loading: false,
     suggestions: []
   })
+  const shouldSearch = React.useRef(debounce(getNewSuggestionData, debouncingTime))
   
   const onFocus = async () => {
     const {layoutProperties} = state
     let copyState = {...state}
-      if (parentViewRef.measure && !layoutProperties) {
-        parentViewRef.measure( (fx:number, fy:number, width:number, height:number, px:number, py:number) => {
+      if (parentViewRef.current.measure && !layoutProperties) {
+        parentViewRef.current.measure( (fx:number, fy:number, width:number, height:number, px:number, py:number) => {
           copyState.layoutProperties = {
             width: width, 
             height: height, 
@@ -120,7 +76,7 @@ const AutoComplete = ({
     setState(copyState)
   }
 
-  const onchangeHandler = async (text:string) => {
+   async function getNewSuggestionData (text:string)  {
     const {layoutProperties, modalOpen} = state
     const copyState = {...state}
     if (loaderRequired) {
@@ -149,6 +105,10 @@ const AutoComplete = ({
     setState(copyState)
   }
 
+  const onChangeHandler = (text:string) => {
+    shouldSearch.current(text)
+  }
+
   const onSelection = (selectedObj:AutoCompleteObj) => {
     const {modalOpen, loading} = state
     const copysState = {...state}
@@ -163,9 +123,9 @@ const AutoComplete = ({
         <View>
             <TextInput
             {...rest}
-            ref={component => {parentViewRef = component}}
+            ref={parentViewRef}
             style={[{color: defaultColor, borderColor: defaultColor}, styles.defaultTextInputStyle, textInputStyle]}
-            onChangeText={(text) => onchangeHandler(text)}
+            onChangeText={(text) => onChangeHandler(text)}
             onFocus={onFocus}
             value={value.title}
           />
@@ -177,9 +137,9 @@ const AutoComplete = ({
        <View needsOffscreenAlphaCompositing style={styles.modelOpenViewSub}>
         <TextInput
           {...rest}
-          ref={component => parentViewRef = component}
+          ref={parentViewRef}
           style={[{color: defaultColor, borderColor: defaultColor}, styles.defaultTextInputStyle, textInputStyle]}
-          onChangeText={(text) => onchangeHandler(text)}
+          onChangeText={(text) => onChangeHandler(text)}
           onFocus={onFocus}
           value={value.title}
           autoFocus={true}
