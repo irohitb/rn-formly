@@ -9,14 +9,13 @@ import {
   TouchableOpacity,
   ActivityIndicator
 } from 'react-native'
-import PropTypes from 'prop-types'
+import {AutoCompleteProps, AutoCompleteObj} from '@src/types'
 
 
 const DEFAULT_ERROR_MESSAGE = 'Error While Loading the data'
 
 const styles = StyleSheet.create({
   defaultTextInputStyle: {
-    width: 'auto',
     marginTop: 50,
     padding: 5,
     justifyContent: 'center',
@@ -63,73 +62,108 @@ const styles = StyleSheet.create({
   }
 })
 
-const AutoComplete = (props) => {
-    const {
-    upsideEmit,
-    defaultColor,
-    value,
-    asyncFunction,
-    textInputStyle,
-    loaderRequired,
-    listTextStyle,
-    listViewStyle,
-    ...rest
-  } = props
-  let parentViewRef = null
-  const [layoutProperties, setLayoutProperties] = useState(null)
-  const [modalOpen, setModelOpen] = useState(false)
-  const [suggestions, setSuggestion] = useState([])
-  const [loading, setLoadingStatus] = useState(false)
+interface layoutProperties {
+  width: number,
+  height: number, 
+  offsetX: number,
+  offsetY: number
+}
+interface IState {
+  layoutProperties: layoutProperties | null, 
+  modalOpen: boolean, 
+  loading: boolean,
+  suggestions: AutoCompleteObj[],
 
+}
+
+const AutoComplete = ({
+  upsideEmit,
+  defaultColor,
+  value,
+  asyncFunction,
+  textInputStyle,
+  loaderRequired,
+  listTextStyle,
+  listViewStyle,
+  debouncingTime=500, 
+  debouncingEnable=true,
+  ...rest
+}: AutoCompleteProps) => {
+  let parentViewRef = React.useRef(null)
+  const [state, setState] = useState<IState>({
+    layoutProperties: null, 
+    modalOpen: false, 
+    loading: false,
+    suggestions: []
+  })
   
-  const onFocus = async (text) => {
-    if (parentViewRef.measure && !layoutProperties) {
-      parentViewRef.measure( (fx, fy, width, height, px, py) => {
-        setLayoutProperties({
-          width: width, 
-          height: height, 
-          offsetX: px,
-          offsetY: py
-        })
+  const onFocus = async () => {
+    const {layoutProperties} = state
+    let copyState = {...state}
+      if (parentViewRef.measure && !layoutProperties) {
+        parentViewRef.measure( (fx:number, fy:number, width:number, height:number, px:number, py:number) => {
+          copyState.layoutProperties = {
+            width: width, 
+            height: height, 
+            offsetX: px,
+            offsetY: py
+          }
       })
     }
-    //To check if values have data or not
+    //To check if values have data or not (we get from props)
+    //Set that as first suggestion
     const valueArr = Object.values(value)
     if (valueArr.length > 0 && value.title)  {
       const suggestions = await asyncFunction(value.title)
-      setSuggestion(suggestions)
+      copyState.suggestions = [...suggestions]
     }
+    setState(copyState)
   }
 
-  const onchangeHandler = async (text) => {
+  const onchangeHandler = async (text:string) => {
+    const {layoutProperties, modalOpen} = state
+    const copyState = {...state}
+    if (loaderRequired) {
+      copyState.loading = true
+    }
+    if(layoutProperties && !modalOpen) {
+      copyState.modalOpen = true
+    }
     try {
-    if (loaderRequired) setLoadingStatus(true)
-    if(layoutProperties && !modalOpen) setModelOpen(true)
-    const emitObj = {
-      title: text
-    }
+    setState(copyState)
     const suggestions = await asyncFunction(text)
-    setSuggestion(suggestions)
-    upsideEmit(emitObj)
-    } catch (error) {
-      if(modalOpen) setModelOpen(false)
-      if (error.message)  upsideEmit(null, error.message)
-      else upsideEmit(null, DEFAULT_ERROR_MESSAGE)
+    copyState.suggestions = [...suggestions]
+    } 
+    catch (error) {
+      if(modalOpen) {
+        copyState.modalOpen = false
+      }
+      if (!error.message)  {
+        error.message = DEFAULT_ERROR_MESSAGE
+      }
+      upsideEmit(null, false, error)
     }
-    if (loaderRequired) setLoadingStatus(false)
+    if (loaderRequired) {
+      copyState.loading = false
+    }
+    setState(copyState)
   }
 
-  const onSelection = (selectedObj) => {
-    if(modalOpen) setModelOpen(false)
-    upsideEmit(selectedObj)
+  const onSelection = (selectedObj:AutoCompleteObj) => {
+    const {modalOpen, loading} = state
+    const copysState = {...state}
+    // If loading or modal open is is true, set to false
+    copysState.loading = !loading || false
+    copysState.modalOpen = !modalOpen || false
+    upsideEmit(selectedObj, true)
   }
 
-  if (!modalOpen) {
+  if (!state.modalOpen) {
       return (
         <View>
             <TextInput
             {...rest}
-            ref={component => parentViewRef = component}
+            ref={component => {parentViewRef = component}}
             style={[{color: defaultColor, borderColor: defaultColor}, styles.defaultTextInputStyle, textInputStyle]}
             onChangeText={(text) => onchangeHandler(text)}
             onFocus={onFocus}
@@ -139,7 +173,7 @@ const AutoComplete = (props) => {
       )
   } else {
     return (
-      <View style={[styles.modelOpenViewMain, {marginTop: -layoutProperties.offsetY + 83.5}]}>
+      <View style={[styles.modelOpenViewMain, {marginTop:state.layoutProperties ? -state.layoutProperties.offsetY + 83.5 : 0 }]}>
        <View needsOffscreenAlphaCompositing style={styles.modelOpenViewSub}>
         <TextInput
           {...rest}
@@ -150,13 +184,13 @@ const AutoComplete = (props) => {
           value={value.title}
           autoFocus={true}
           />
-          { loading ? (
+          { state.loading ? (
             <View style={styles.loadingView}>
               <ActivityIndicator size="large" color={defaultColor} />
             </View>
            ): (
             <FlatList 
-            data={suggestions}
+            data={state.suggestions}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => onSelection(item)} style={[styles.flatlistIndividualComponent, listViewStyle]}>
                 <Text style={[styles.flatListIndividualComponentText, listTextStyle]}> {item.title}</Text>
@@ -170,16 +204,4 @@ const AutoComplete = (props) => {
     )
   }
 }
-
-AutoComplete.propTypes = {
-  upsideEmit: PropTypes.func.isRequired,
-  defaultColor: PropTypes.string,
-  value: PropTypes.object,
-  textInputStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  asyncFunction: PropTypes.func.isRequired,
-  loaderRequired: PropTypes.bool, 
-  listTextStyle: PropTypes.object, 
-  listViewStyle: PropTypes.object
-}
-
 export default AutoComplete

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import ImagePicker, {Image as ImageType} from 'react-native-image-crop-picker';
-import {View, Text, StyleSheet, TouchableOpacity, Dimensions,  Image, ImageStyle} from 'react-native'
+import ImagePicker from 'react-native-image-crop-picker';
+import {View, Text, StyleSheet, TouchableOpacity, Dimensions,  Image} from 'react-native'
 import {SingleImageProps, MultipleImageProps} from '@src/types'
 
 const styles = StyleSheet.create({

@@ -1,4 +1,5 @@
-import {TextInput, StyleSheet, Dimensions, StyleProp, TextStyle, ImageStyle} from 'react-native'
+import { AutoComplete } from '@src/formComponent';
+import {TextInput, ViewStyle, TextStyle, ImageStyle} from 'react-native'
 import {Image as ImageType} from 'react-native-image-crop-picker';
 
 interface TextBaseProps {
@@ -32,9 +33,36 @@ export interface ImageBaseProps {
     upsideEmit: (value: ImageType) => void,
   }
 
-  interface MultipleImageProps extends ImageBaseProps {
+ export interface MultipleImageProps extends ImageBaseProps {
     value?: Array<ImageType | null>
     maximumNoOfImages?: number
     upsideEmit: (value: Array<ImageType | null>) => void,
   }
   
+  export interface AutoCompleteObj {
+      id: number | string
+      title: string
+      value: string
+      [key:string]: any
+  }
+
+  interface AutocompleteErrorMessage {
+    message: string, 
+    [key:string]: any
+  }
+
+  
+  export interface AutoCompleteBaseProps { 
+    upsideEmit: (val: AutoCompleteObj | null | string, selection: boolean, errorMessage?: AutocompleteErrorMessage) => void,
+    defaultColor?: string,
+    value: AutoCompleteObj
+    asyncFunction: (val:string) => Promise<AutoCompleteObj[]>,
+    textInputStyle: TextStyle,
+    loaderRequired?: boolean,
+    listTextStyle?: TextStyle
+    listViewStyle?:ViewStyle
+    debouncingTime?: number
+    debouncingEnable?: boolean
+  }
+
+  export type AutoCompleteProps = AutoCompleteBaseProps & TextInput
