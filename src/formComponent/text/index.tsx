@@ -1,8 +1,7 @@
-import * as React from 'react' 
-import {TextInput} from 'react-native'
-import {TextInputProps} from '@src/types/formComponents'
-import styles from './style'
-
+import * as React from 'react';
+import { TextInput } from 'react-native';
+import { TextInputProps } from '@src/types/formComponents';
+import styles from './style';
 
 export const InputText = ({
   value,
@@ -10,28 +9,23 @@ export const InputText = ({
   defaultColor,
   upsideEmit,
   ...rest
-}: TextInputProps) => {  
-
-  const onChangeHandler = (text:string) => {
-    upsideEmit(text)
-    return 
-  }
+}: TextInputProps) => {
+  const onChangeHandler = (text: string) => {
+    upsideEmit(text);
+    return;
+  };
   return (
     <>
-      <TextInput  
-      style={[{color: defaultColor, borderColor: defaultColor}, styles.defaultTextInputStyle, textInputStyle]}
-      onChangeText={text => onChangeHandler(text)}
-      value={value}
-      {...rest}
+      <TextInput
+        style={[
+          { color: defaultColor, borderColor: defaultColor },
+          styles.defaultTextInputStyle,
+          textInputStyle,
+        ]}
+        onChangeText={(text) => onChangeHandler(text)}
+        value={value}
+        {...rest}
       />
     </>
-  )
-}
-
-
-
-
-
-
-
-
+  );
+};

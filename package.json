@@ -8,7 +8,7 @@
     "build": "npm run prettier:write && tsc -p .",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.tsx\"",
-    "prettier:write": "npm run prettier:base -- --write \"src/**/*.tsx\""
+    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\""
   },
   "husky": {
     "hooks": {
@@ -16,7 +16,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.tsx": [
+    "src/**/*.{ts,tsx}": [
       "npm run prettier:write",
       "git add"
     ]
