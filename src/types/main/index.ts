@@ -9,7 +9,7 @@ import {
     MultipleImagePicker
 } from './inputFields'
 import {TextStyle, ViewStyle} from 'react-native'
-import ProgressBar from "react-native-form-progress"
+import {ProgressBarProps} from "react-native-form-progress"
 export type InputField = Array<Text | Otp | DateTyper | CheckBox | AutoComplete | SingleImagePicker | MultipleImagePicker>
 
 
@@ -27,7 +27,7 @@ export interface Props {
     errorStyle?: TextStyle
     defaultErrorMessage?:string
     buttonNotSelectedTextStyle?:TextStyle 
-    progressBar?: typeof ProgressBar
+    progressBar?: Partial<ProgressBarProps>
     buttonSelectedStyle:ViewStyle
     buttonNotSelectedStyle: ViewStyle
 }

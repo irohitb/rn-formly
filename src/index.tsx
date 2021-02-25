@@ -16,7 +16,9 @@ import {Props} from '@src/types/main'
    {
     inputFields, 
     buttonSelectedStyle, 
-    progressBar,  
+    progressBar={
+      blink: false,
+    },  
     backgroundViewColor, 
     defaultColor, 
     helperTextStyle, 
@@ -264,7 +266,6 @@ SignupFormComponent.propTypes = {
 }
 
 SignupFormComponent.defaultProps = {
-  keyboardAutoOpenForText: true,
   progressBar: {
     blink: false,
   },
@@ -277,9 +278,3 @@ SignupFormComponent.defaultProps = {
 
 
 export default SignupFormComponent
-
-
-
-
-
-

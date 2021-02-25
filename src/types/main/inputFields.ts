@@ -1,6 +1,6 @@
 // This is main formly array 
 import {TextStyle, TextInput, ViewStyle, ImageStyle} from 'react-native'
-import NextTextInput from 'react-native-next-input/lib';
+import  {NextInputProps} from 'react-native-next-input/lib';
 import {
     DateSupportedFormats,
     PickerCheckBoxOptions,
@@ -33,7 +33,7 @@ export interface Otp extends BaseProps {
     templateOptions: {
         noOfTextInput: number
         textInputStyle?:  TextStyle
-        componentProps?: Partial<typeof NextTextInput>
+        componentProps?: Partial<NextInputProps>
     }
 }
 
@@ -42,7 +42,7 @@ export interface DateTyper extends BaseProps {
     defaultValue?: Array<string> | string
     templateOptions: {
         dateFormat: DateSupportedFormats
-        componentProps?: Partial<typeof NextTextInput>
+        componentProps?: Partial<NextInputProps>
     }
 }
 
@@ -71,7 +71,7 @@ export interface AutoComplete extends BaseProps {
         listViewStyle?:ViewStyle
         debouncingTime?: number
         debouncingEnable?: boolean
-        componentProps?: Partial<typeof NextTextInput>
+        componentProps?: Partial<NextInputProps>
     }
 }
 
@@ -96,3 +96,7 @@ export interface MultipleImagePicker extends BaseProps {
     defaultValue?: Array<ImageType>
     templateOptions: ImagePickerMultipleImageTemplate
 }
+
+
+    
+   
