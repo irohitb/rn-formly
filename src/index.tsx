@@ -11,7 +11,7 @@ import {
   AutoComplete
 } from '@src/formComponent/index'
 import Spinner from 'react-native-loading-spinner-overlay'
-
+import {Props} from '@src/types/main'
  const SignupFormComponent = (
    {
     inputFields, 
@@ -30,7 +30,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
     buttonNotSelectedTextStyle,
     backIconStyle,
     onFinish
-  }) => {
+  }: Props) => {
 
   // All the component 
   const [index, setIndex] = React.useState(0)
