@@ -17,6 +17,13 @@
 - Includes loading component 
 - Instant support for feature and issue using git issue tracker
 
+## Index 
+
+- [Screenshots](https://github.com/blendtale/rn-formly#screenshots)
+- [Installation](https://github.com/blendtale/rn-formly#installation)
+- [Basic Usage and Global Props](https://github.com/blendtale/rn-formly#usage)
+- [Supported Components and Props Index](https://github.com/blendtale/rn-formly#currently-supported-component)
+- [Structuring your Array Object](https://github.com/blendtale/rn-formly#structuring-your-array-object)
 
 ### Screenshots 
  <img src="https://user-images.githubusercontent.com/32276134/72256135-7e162f00-362e-11ea-9500-45b552e27660.png" width=250 height=400> <img src="https://user-images.githubusercontent.com/32276134/72256136-7e162f00-362e-11ea-96ff-6da347fae333.png" width=250 height=400>
@@ -27,6 +34,9 @@
 
 <img src="https://user-images.githubusercontent.com/32276134/72256142-7eaec580-362e-11ea-9738-efe7ce49e8a4.png" width=250 height=400> <img src="https://user-images.githubusercontent.com/32276134/72256143-7f475c00-362e-11ea-9074-932075147bcc.png" width=250 height=400>
 <img src="https://user-images.githubusercontent.com/32276134/72256143-7f475c00-362e-11ea-9074-932075147bcc.png" width=250 height=400>
+
+
+
 
 ## Installation 
 
