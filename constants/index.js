@@ -1,1 +1,0 @@
-export {default as coloursCode} from './colors-to-hex'
