@@ -279,6 +279,8 @@ inputFields Props supports most of the popular components you would need in a fo
 | 5. | templateOptions | object | props for specific components | No | 
 | 6. | Validator | function | sometimes you want to do validation in the real-time and not after the next button is clicked, in this case, pass the validator function. A validator function would receive the following data in its argument `index, key, currentData, payload` | No |
 | 7. | required | Boolean | if `required: true` the field cannot be empty i.e. button to iterate to the next component will be disabled | no | 
+| 8. | buttonText | string | passing buttonText in your key object will overwrite your globalText for that particular screen only | no |
+| 3. | defaultValue | (based on component) | this is default value (usually the value user have entered before) | no
 
 
 ### Text Component 
@@ -299,15 +301,15 @@ inputFields Props supports most of the popular components you would need in a fo
   ```
 Component level Props are mostly passed in `templateOptions`
 
+
+**Default Value type:** string
+
 ##### TemplateOptions keys with value
 
 | S.NO | key | type | description | Required  |
 | ---- | --- | ---- | ----------- | --------  |
 | 1. | componentProps | object | Can pass all the props for `TextInput ` | no | 
 | 2. | templateStyle | style object | stying for text input | no | 
-
-
-
 
 
 ### dateTyper
@@ -327,8 +329,9 @@ Component level Props are mostly passed in `templateOptions`
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
 | 1. | dateFormat | string | should be either `DDMMYYYY`, or `MMDDYYYY` or `YYYYMMDD` | No |
+| 2. | componentProps | [NextInputProps](https://github.com/blendtale/react-native-next-input) | Read more about next input dependency which we use [here](https://github.com/blendtale/react-native-next-input) | no
 
-
+**Default Value type:** Array of strings or string
 ### checkboxes
 
 ```
@@ -381,12 +384,17 @@ Component level Props are mostly passed in `templateOptions`
 
 ```
 
+**defaultValue type:** ImageType; 
+
+
 ##### TemplateOptions key/value
 
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
 | 1. | cropWidth | number | width of the image user is allowed to crop/select | no | none |
 | 2. | cropHeight | number | heoght of the image user is allowed to crop/select | no | none |
+| 3. | imageComponentStyle | ImageStyle | styling your image component | no | 
+
 
 
 ### images
@@ -404,6 +412,8 @@ Component level Props are mostly passed in `templateOptions`
   },
 
 ```
+
+**defaultValue type:** Array of ImageType; 
 
 ##### TemplateOptions key/value
 
@@ -433,7 +443,7 @@ Component level Props are mostly passed in `templateOptions`
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
 | 1. | noOfTextInput | number | number of character in your otp  | yes | none |
-
+| 2. | componentProps | [NextInputProps](https://github.com/blendtale/react-native-next-input) | Read more about next input dependency which we use [here](https://github.com/blendtale/react-native-next-input) | no
 ### AutoComplete
 
 ```
@@ -471,11 +481,14 @@ Click [here](https://github.com/irohitb/formly-example/blob/master/dummy/autocom
 ##### TemplateOptions key/value
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
-| 1. | componentProps |  object | Can pass all the props for `TextInput ` | no | 
+| 1. | componentProps |  [NextInputProps](https://github.com/blendtale/react-native-next-input) | Read more about next input dependency which we use [here](https://github.com/blendtale/react-native-next-input) | no
 | 2. | asyncFunction | async function | this function will recive the input text and should return suggestions accordingly (via making some api call etc)  | yes | none | 
 | 3. | loaderRequired | Boolean | shows loader until user recieves the data from async function | no | false | 
 | 4. | listViewStyle | styling object | styling for the list list view | no | nope |
 | 5. | listTextStyle | styling object | styling for the text in the list view | no | nope |
+| 6. | textInputStyle | TextStyleObject | Input box text style | no | nope | 
+| 7. | debouncingEnable | boolean | enable debouncing to fetch data | no | true | 
+| 8. |  debouncingTime | number | debouncing time to make request |  500 | false
 
 
 ### Picker 
