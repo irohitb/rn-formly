@@ -176,13 +176,14 @@ Important Props are highlighted.
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | textStyle | stylesheet object | none | No | Heading text style (style for your `label` key in `inputFields` props) | 
-| 2. | progressBar | object | blink: false | No | click here to know more about ProgressBar Component | 
-| 3. | helperTextStyle | stylesheet object | none | No | Helper text style (style for your `helper` key in `inputFields` )
+| 1. | textStyle | TextStyle | none | No | Heading text style (style for your `label` key in `inputFields` props) | 
+| 2. | progressBar | [ProgressBarProps](https://github.com/blendtale/react-native-form-progress) | blink: false | No | click here to know more about ProgressBar Component | 
+| 3. | helperTextStyle | TextStyle | none | No | Helper text style (style for your `helper` key in `inputFields` )
 | 4. |  backgroundViewColor | string | 'white' | No | background for the view of your form | 
 | **5.** | **defaultColor** | **string**  | **'black'** | **no** | **Formats button color, text color and sub component color accordingly (can be override by passing styles for individual component)** | 
 | **6.** | **onFinish** | **function** | **none** | **No** | **Function which is triggered after user have itterated over all the elements in the passed inputFields** |
-| 7. | backIconStyle | stylesheet object | none | No | Styling for the back button `<` | 
+| 7. | backIconStyle | TextStyle | none | No | Styling for the back button `<` | 
+| 8. | startingIndex | number | 0 (inital number of your inputfields | no | which object to start with your input fields array | 
 
 #### Button Optional props 
 
@@ -190,10 +191,10 @@ Validation and Error throwing are done in `inputFields` array. See [inputFields]
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | buttonSelectedStyle | stylesheet object | none | No | Styling of the button when a user is allowed to move to the next field |
-| 2. | buttonNotSelectedStyle | stylesheet object | none | No | styling of the button when a user is not allowed to move to the next field |
-| 3. | buttonSelectedTextStyle | stylesheet object | none | No | styling of the text inside the button when a user is allowed to move to the next field | 
-| 4. | buttonNotSelectedTextStyle | stylesheet object | none | no | styling of the text inside the button when a user is not allowed to move to the next field |
+| 1. | buttonSelectedStyle | ViewStyle | none | No | Styling of the button when a user is allowed to move to the next field |
+| 2. | buttonNotSelectedStyle | ViewStyle | none | No | styling of the button when a user is not allowed to move to the next field |
+| 3. | buttonSelectedTextStyle | TextStyle | none | No | styling of the text inside the button when a user is allowed to move to the next field | 
+| 4. | buttonNotSelectedTextStyle | TextStyle | none | no | styling of the text inside the button when a user is not allowed to move to the next field |
 
 #### Error Props 
 
