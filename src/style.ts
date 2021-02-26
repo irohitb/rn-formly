@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   defaultTextInputStyle: {
-    width: 'auto',
     marginTop: 50,
     padding: 5,
     justifyContent: 'center',

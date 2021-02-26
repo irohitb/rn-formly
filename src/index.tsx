@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import ProgressBar from 'react-native-form-progress';
+import ProgressBar, { ProgressBarProps } from 'react-native-form-progress';
 import {
   DateTyper,
   CheckBoxes,
@@ -18,6 +18,12 @@ import {
 } from '@src/formComponent/index';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { Props } from '@src/types/main';
+import styles from '@src/style';
+
+interface IErrorState {
+  status: boolean;
+  message: string | null;
+}
 
 const SignupFormComponent = ({
   inputFields,
@@ -44,7 +50,10 @@ const SignupFormComponent = ({
   const [index, setIndex] = React.useState(startingIndex);
   const [payload, setPayloadData] = React.useState<{ [key: string]: any }>({});
   const [Loading, toggleLoadingData] = React.useState(false);
-  const [Error, setErrorData] = React.useState({ status: false, message: '' });
+  const [Error, setErrorData] = React.useState<IErrorState>({
+    status: false,
+    message: '',
+  });
   const [buttonDisable, toggleButtonDisable] = React.useState(true);
   // Current Component based on indux
   const currentComponent = inputFields[index];
@@ -59,23 +68,34 @@ const SignupFormComponent = ({
     templateOptions,
   } = currentComponent;
   let { required } = currentComponent;
-  // if no template options, initlalize an empty object
-  const {
+
+  // typescript does not support block space ts-ignore
+  // Since this file was originally in JS so later in code we handle if it is undefined (when we create hasmap)
+  // TS wants to check when destructuring
+  let {
+    //@ts-ignore
     templateStyle,
+    //@ts-ignore
     options,
+    //@ts-ignore
     multipleSelect,
-    // Image Props
+    //@ts-ignore
     cropHeight,
+    //@ts-ignore
     cropWidth,
-    //---- Date Format
+    //@ts-ignore
     dateFormat,
-    //---- OTP
+    //@ts-ignore
     noOfTextInput,
+    //@ts-ignore
     componentProps,
-    //---- AutoComplete
+    //@ts-ignore
     asyncFunction,
+    //@ts-ignore
     loaderRequired,
+    //@ts-ignore
     listViewStyle,
+    //@ts-ignore
     listTextStyle,
   } = templateOptions;
 
@@ -102,10 +122,11 @@ const SignupFormComponent = ({
   const inputValidator = inputValidatorSelector();
 
   // --- Progress bar ---
-  progressBar.defaultProgress = index;
-  progressBar.totalNumberOfProgressBars = inputFields.length;
-  progressBar.colorOfProgressBar =
-    progressBar.colorOfProgressBar || defaultColor;
+  let progressBarProps: ProgressBarProps = {
+    currentProgress: index,
+    totalNumberOfProgressBars: inputFields.length,
+    colorOfProgressBar: progressBar.colorOfProgressBar || defaultColor,
+  };
 
   // All Functions declareation
   // --------------------------
@@ -206,7 +227,7 @@ const SignupFormComponent = ({
         defaultColor={defaultColor}
         cropWidth={cropWidth}
         cropHeight={cropHeight}
-        value={Array.isArray(payload[key]) ? [...payload[key]] : null}
+        value={[...payload[key]]}
       />
     ),
     otp:
@@ -247,7 +268,7 @@ const SignupFormComponent = ({
     <View style={{ flex: 1 }}>
       <View style={{ backgroundColor: backgroundViewColor, height: '100%' }}>
         <Spinner visible={Loading} />
-        <ProgressBar {...progressBar} />
+        <ProgressBar {...progressBarProps} />
         {/* Back button */}
         {index !== 0 ? (
           <TouchableOpacity
@@ -293,45 +314,13 @@ const SignupFormComponent = ({
                 userButtonTextStyle,
               ]}
             >
-              {' '}
-              {usedButtonText}{' '}
+              {usedButtonText}
             </Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
   );
-};
-
-SignupFormComponent.propTypes = {
-  textStyle: PropTypes.object,
-  inputFields: PropTypes.array.isRequired,
-  progressBar: PropTypes.object,
-  helperTextStyle: PropTypes.object,
-  backgroundViewColor: PropTypes.string,
-  defaultColor: PropTypes.string,
-  onFinish: PropTypes.func,
-  //Buttons
-  buttonSelectedStyle: PropTypes.object,
-  globalButtonText: PropTypes.string,
-  buttonSelectedTextStyle: PropTypes.object,
-  onButtonClick: PropTypes.func.isRequired,
-  buttonNotSelectedStyle: PropTypes.object,
-  buttonNotSelectedTextStyle: PropTypes.object,
-  //Errors
-  errorStyle: PropTypes.object,
-  defaultErrorMessage: PropTypes.string,
-  backIconStyle: PropTypes.object,
-};
-
-SignupFormComponent.defaultProps = {
-  progressBar: {
-    blink: false,
-  },
-  globalButtonText: 'Next',
-  backgroundViewColor: 'white',
-  defaultColor: 'black',
-  defaultErrorMessage: 'Sorry Something went wrong',
 };
 
 export default SignupFormComponent;

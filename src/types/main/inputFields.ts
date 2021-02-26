@@ -18,7 +18,7 @@ export interface BaseProps {
     key: string,
     currentData: any,
     payload: { [key: string]: any }
-  ) => void;
+  ) => boolean;
   buttonText?: string;
 }
 

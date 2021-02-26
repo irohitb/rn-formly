@@ -38,7 +38,7 @@ const DateTyper = ({
   dateFormat = 'DDMMYYYY',
   textInputStyle,
   upsideEmit,
-  value = '',
+  value = [],
   ...rest
 }: DateTyperProps) => {
   if (value.length > 8) {
