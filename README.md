@@ -205,6 +205,7 @@ Validation and Error throwing are done in `inputFields` array. See [inputFields]
 | 2. | buttonNotSelectedStyle | ViewStyle | none | No | styling of the button when a user is not allowed to move to the next field |
 | 3. | buttonSelectedTextStyle | TextStyle | none | No | styling of the text inside the button when a user is allowed to move to the next field | 
 | 4. | buttonNotSelectedTextStyle | TextStyle | none | no | styling of the text inside the button when a user is not allowed to move to the next field |
+| 5. | globalButtonText | string | "Next" | no | button Text to move to next screen (can be overwritten by passing button text in inputArray field object |
 
 #### Error Props 
 
