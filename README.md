@@ -1,3 +1,7 @@
+### Note:
+
+Typescript update isn't tested and hence not published yet on npm.
+
 **Create beautiful React-Native forms within minutes with validator, progress-bar, custom error handling by passing just JSON**
 > *If you find this repo useful, please give it a star on github*
 
