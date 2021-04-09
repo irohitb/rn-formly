@@ -1,13 +1,11 @@
 ### Note:
 
-**Typescript Suppoerted** 
-
+**Typescript Suppoerted**
 **Create beautiful React-Native forms within minutes with validator, progress-bar, custom error handling by passing just JSON**
 > *If you find this repo useful, please give it a star on github*
 
 |  | Status |
 | - | - |
-
 | Dependencies | [![Dependencies](https://img.shields.io/david/blendtale/rn-formly)](https://david-dm.org/blendtale/rn-formly) [![Dev dependencies](https://img.shields.io/david/dev/blendtale/rn-formly)](https://david-dm.org/blendtale/rn-formly) [![Peer dependencies](https://img.shields.io/david/peer/blendtale/rn-formly)](https://david-dm.org/blendtale/rn-formly)|
 | Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/rn-formly) [![npm downloads](https://img.shields.io/npm/dt/rn-formly)](https://www.npmjs.com/package/rn-formly)
 | License | [![GitHub](https://img.shields.io/github/license/blendtale/rn-formly)](https://github.com/blendtale/rn-formly/blob/master/LICENSE)
