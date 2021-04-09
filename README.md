@@ -1,7 +1,9 @@
 ### Note:
 
 **Typescript Suppoerted**
+
 **Create beautiful React-Native forms within minutes with validator, progress-bar, custom error handling by passing just JSON**
+
 > *If you find this repo useful, please give it a star on github*
 
 |  | Status |
