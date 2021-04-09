@@ -4475,9 +4475,9 @@ react-native-device-info@>=5.5.7:
   integrity sha512-5fIcrEfxsyIJ0HZ/pHd+DeYwC81wi5tupFkPSASYXz/7QhatF8W0W6qR+YlvI6gJVSFNgQKgrPrh18RGMgbZdg==
 
 react-native-form-progress@^1.0.11:
-  version "1.0.16"
-  resolved "https://registry.npmjs.org/react-native-form-progress/-/react-native-form-progress-1.0.16.tgz"
-  integrity sha512-lElVBc1nwm/Z5PEJiNdaMHProp8AldvLB1CFwLWoesZfsIxX1SmIHDwLJspYP8ZN8c/jaGioTRifERf7IxgBwA==
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/react-native-form-progress/-/react-native-form-progress-1.0.21.tgz#0778c9d367554d1936b8c3d8fb930ba4c0343a8c"
+  integrity sha512-afASKxW6qfEtOOuF1nSjKmDYWk3RIWITyH+8T4FLMSYwEKBTeq2u/+qruuH3+ymnbqvMY4Hml4bAc9r2XnN/yw==
   dependencies:
     react-native-smart-statusbar "^1.0.23"
 
