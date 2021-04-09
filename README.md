@@ -1,16 +1,14 @@
 ### Note:
 
-Typescript update isn't tested and hence not published yet on npm.
-
 **Create beautiful React-Native forms within minutes with validator, progress-bar, custom error handling by passing just JSON**
 > *If you find this repo useful, please give it a star on github*
 
 |  | Status |
 | - | - |
 | Build  | ![Build Status](https://travis-ci.com/blendtale/rn-formly.svg?branch=master)
-| Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/rn-formly)](https://david-dm.org/irohitb/rn-formly)|
+| Dependencies | [![Dependencies](https://img.shields.io/david/blendtale/rn-formly)](https://david-dm.org/blendtale/rn-formly) [![Dev dependencies](https://img.shields.io/david/dev/blendtale/rn-formly)](https://david-dm.org/blendtale/rn-formly) [![Peer dependencies](https://img.shields.io/david/peer/blendtale/rn-formly)](https://david-dm.org/blendtale/rn-formly)|
 | Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/rn-formly) [![npm downloads](https://img.shields.io/npm/dt/rn-formly)](https://www.npmjs.com/package/rn-formly)
-| License | [![GitHub](https://img.shields.io/github/license/irohitb/rn-formly)](https://github.com/irohitb/rn-formly/blob/master/LICENSE)
+| License | [![GitHub](https://img.shields.io/github/license/blendtale/rn-formly)](https://github.com/blendtale/rn-formly/blob/master/LICENSE)
 
 ## ⭐ Features
 
@@ -92,7 +90,7 @@ Image Crop picker requires you to have relevant permission to access camera and 
 
 You refer to following [documentation](https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md) for more information (and probably for integration in complex project) 
 
-or look into this [commit](https://github.com/irohitb/formly-example/commit/2814782d01f6f111208089ff4628c28752919d8d)
+or look into this [commit](https://github.com/blendtale/formly-example/commit/2814782d01f6f111208089ff4628c28752919d8d)
 
 
 
@@ -106,7 +104,7 @@ Add following lines in your android/app/src/main/AndroidManifest.xml
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
-look at this [commit](https://github.com/irohitb/formly-example/commit/939b81a90c088ed141b12af9ee8fc7340068f106)
+look at this [commit](https://github.com/blendtale/formly-example/commit/939b81a90c088ed141b12af9ee8fc7340068f106)
 
 If this does not work, refer to following instructions. 
 
@@ -116,7 +114,7 @@ If this does not work, refer to following instructions.
 
 ## Usage 
 
-To get started/or a try it out, you can clone or check out the following [repo](https://github.com/irohitb/formly-example)
+To get started/or a try it out, you can clone or check out the following [repo](https://github.com/blendtale/formly-example)
 
 **Minimilistic Setup Example** 
 
@@ -171,13 +169,13 @@ const inputFields = [
 
 ```
 
-Example usage of all the component can be seen using this [file](https://github.com/irohitb/formly-example/blob/master/App.js)
+Example usage of all the component can be seen using this [file](https://github.com/blendtale/formly-example/blob/master/App.js)
 
 ### Required Props 
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
-| 1. | inputFields | Array | Nope | Yes | [Click here](https://github.com/irohitb/rn-formly#inputfields-props) |
+| 1. | inputFields | Array | Nope | Yes | [Click here](https://github.com/blendtale/rn-formly#inputfields-props) |
 | 2. | onButtonClick | Async function | Nope | Yes | Passed function receives `index` of the element in array, `key` associated with it and the complete payload, This is triggered after user have clicked on the Next button, and before the iteration happens, you can throw errors here to prevent from incrementing to the text state |
 
 This is how error handling is done behind the scene: ` if (error.message) setErrorData({status: true, message: error.message})`
@@ -201,7 +199,7 @@ Important Props are highlighted.
 
 #### Button Optional props 
 
-Validation and Error throwing are done in `inputFields` array. See [inputFields](https://github.com/irohitb/rn-formly#inputfields-props) section to know more
+Validation and Error throwing are done in `inputFields` array. See [inputFields](https://github.com/blendtale/rn-formly#inputfields-props) section to know more
 
 | **SNO** | **Prop** | **Type** | **Default** | **Required** | **description** | 
 |----------|----------|-------------|--------------|-------------|----------|
@@ -246,14 +244,14 @@ inputFields Props supports most of the popular components you would need in a fo
 
 ### Currently Supported Component 
 
-1. [Text](https://github.com/irohitb/rn-formly#text-component) 
-2. [dataTyper](https://github.com/irohitb/rn-formly#datetyper)
-3. [checkboxes](https://github.com/irohitb/rn-formly#checkboxes)
-4. [picker]((https://github.com/irohitb/rn-formly#picker))
-5. [image](https://github.com/irohitb/rn-formly#image-single-image),
-6. [images](https://github.com/irohitb/rn-formly#images)
-7. [AutoComplete](https://github.com/irohitb/rn-formly#AutoComplete)
-8. [otp](https://github.com/irohitb/rn-formly#otp) 
+1. [Text](https://github.com/blendtale/rn-formly#text-component) 
+2. [dataTyper](https://github.com/blendtale/rn-formly#datetyper)
+3. [checkboxes](https://github.com/blendtale/rn-formly#checkboxes)
+4. [picker]((https://github.com/blendtale/rn-formly#picker))
+5. [image](https://github.com/blendtale/rn-formly#image-single-image),
+6. [images](https://github.com/blendtale/rn-formly#images)
+7. [AutoComplete](https://github.com/blendtale/rn-formly#AutoComplete)
+8. [otp](https://github.com/blendtale/rn-formly#otp) 
 
 ### Structuring your Array Object 
 
@@ -481,7 +479,7 @@ Where data should be `object Array` containg **id, value, title**
 }]
 ```
 
-Click [here](https://github.com/irohitb/formly-example/blob/master/dummy/autocomplete.js) to see the example da
+Click [here](https://github.com/blendtale/formly-example/blob/master/dummy/autocomplete.js) to see the example da
 ##### TemplateOptions key/value
 | S.NO | key | type | description | Required  | Default | 
 | ---- | --- | ---- | ----------- | --------  | ------- |
