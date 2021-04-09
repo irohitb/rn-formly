@@ -68,7 +68,7 @@
     "babel-preset-expo": "^8.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "husky": "^5.1.0",
+    "husky": "^6.0.0",
     "jest": "^26.0.1",
     "lint-staged": "^10.2.10",
     "prettier": "^2.0.5",
