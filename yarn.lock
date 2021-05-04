@@ -4474,9 +4474,9 @@ react-native-form-progress@^1.0.11:
     react-native-smart-statusbar "^1.0.23"
 
 react-native-image-crop-picker@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/react-native-image-crop-picker/-/react-native-image-crop-picker-0.36.0.tgz#adf5a5677c3ae0e0bdaa18c73d880db2190e3023"
-  integrity sha512-1S8+0EZJmUMWMcdo2tTadqIIsJo7aPxPed0P7Cop3DhBqEeYrAWfgdrJq9VoTXI+cIrOOcTAxn4NZPz+DQEn7g==
+  version "0.36.1"
+  resolved "https://registry.yarnpkg.com/react-native-image-crop-picker/-/react-native-image-crop-picker-0.36.1.tgz#c63b19957d85fed427d04a7cf557543189642fae"
+  integrity sha512-7G/7Lq251noTXo/YWaYRP/pcfY2XlQD5ECULvCW4ze77I2aehbIOy/E3Eo7cAht++9g5Wx3yl/UPhJm3pNMVsA==
 
 "react-native-loading-spinner-overlay@git+https://github.com/blendtale/react-native-loading-spinner-overlay.git":
   version "2.0.0"
