@@ -4462,9 +4462,9 @@ react-is@^17.0.1:
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
 react-native-device-info@>=5.5.7:
-  version "8.0.8"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.0.8.tgz#53f14cb6a7d2fa80863df32e4de388a76fbb3f42"
-  integrity sha512-ljtm48riQeZgf2epIq8TvyxiXZW6vstIX7JDlr89HtrYLUvlX3dmOmxtwZshMuAdk0VpGz/72zvpTDZMSQcKig==
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.3.tgz#022fc01372632bf80c0a6d201aab53344efc715f"
+  integrity sha512-73e3wiGFL8DvIXEd8x4Aq+mO8mZvHARwfYorIEu+X0trLHY92bP5Ict8DJHDjCQ0+HtAvpA4Wda2VoUVN1zh6Q==
 
 react-native-form-progress@^1.0.11:
   version "1.0.21"
