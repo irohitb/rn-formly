@@ -1282,9 +1282,9 @@
     "@types/react-native" "*"
 
 "@types/react-native@*", "@types/react-native@^0.64.2":
-  version "0.64.2"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.2.tgz#2e344aeec0b4eb21fb9eaa0ed8973245c5601d56"
-  integrity sha512-w2y04h+GVLY+OMlFSmq4adPuS51XtEp1yUr83OvXf+moMQ4zDG1Q07HhyvYDXdc+BSS9ANHySBqVCz0hFxli9Q==
+  version "0.64.9"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.9.tgz#8d2a393222a9bf21258fddc4b5f51e99356ce48e"
+  integrity sha512-T4bsjQ2MDTX1/5Z+ywXXaNX1NU5eBtZJSSpygytKslEWRzhiWAk5TnuJPRVLnFn4XFf53jJYOwIRBrNRnV199Q==
   dependencies:
     "@types/react" "*"
 
