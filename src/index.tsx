@@ -26,9 +26,9 @@ interface IErrorState {
 }
 
 interface IState {
-  loading: boolean
-  error: IErrorState
-  buttonDisable: boolean
+  loading: boolean;
+  error: IErrorState;
+  buttonDisable: boolean;
 }
 
 const SignupFormComponent = ({
@@ -60,10 +60,10 @@ const SignupFormComponent = ({
     error: {
       status: false,
       message: null,
-    }, 
-    buttonDisable: false
-  })
-  let componentDidMount = React.useRef(false)
+    },
+    buttonDisable: false,
+  });
+  let componentDidMount = React.useRef(false);
   // Current Component based on indux
   const currentComponent = inputFields[index];
   const {
@@ -144,11 +144,11 @@ const SignupFormComponent = ({
     if (!errorMessage && (data === '' || data)) {
       // Doing data = "" in case someone want to remove last char of a string
       const currentData = { ...payload };
-      currentData[key] = {data, ...rest}
+      currentData[key] = { data, ...rest };
       setPayloadData(currentData);
     } else if (errorMessage) {
-      const currentState = {...state, status: true, message: errorMessage}
-      setState(currentState)
+      const currentState = { ...state, status: true, message: errorMessage };
+      setState(currentState);
     }
     return;
   };
@@ -157,30 +157,34 @@ const SignupFormComponent = ({
     if (index === inputFields.length - 1) {
       if (onFinish) {
         return onFinish;
-      }
-      else {
+      } else {
         return;
       }
     } else {
-      const defaultError = { status: false, message: '' }
-      const currentState = {...state, loading: true, error: defaultError}
-      setState({...currentState})
+      const defaultError = { status: false, message: '' };
+      const currentState = { ...state, loading: true, error: defaultError };
+      setState({ ...currentState });
       const currentValue = payload[key];
       try {
-        const eventTrack = await onButtonClick(index, key, currentValue, payload);
+        const eventTrack = await onButtonClick(
+          index,
+          key,
+          currentValue,
+          payload
+        );
         if (index < inputFields.length) {
           setIndex(index + 1);
         }
-        const currentState = {...state, buttonDisable: true, loading: false}
-        setState({...currentState})
+        const currentState = { ...state, buttonDisable: true, loading: false };
+        setState({ ...currentState });
       } catch (error) {
-        const copyState = {...state, loading: false}
-        const defaultError = { status: false, message: defaultErrorMessage }
+        const copyState = { ...state, loading: false };
+        const defaultError = { status: false, message: defaultErrorMessage };
         if (error.message) {
-          defaultError.message = error.message
+          defaultError.message = error.message;
         }
-        copyState.error = {...defaultError}
-        setState({...currentState})
+        copyState.error = { ...defaultError };
+        setState({ ...currentState });
       }
     }
   };
@@ -197,11 +201,11 @@ const SignupFormComponent = ({
   // Fired whenever payload changes, for validation
   React.useEffect(() => {
     if (!componentDidMount.current) {
-      componentDidMount.current = true
+      componentDidMount.current = true;
     } else {
       const currentData = payload[key];
       const checkValidation = inputValidator(index, key, currentData, payload);
-      setState({...state, buttonDisable: checkValidation})
+      setState({ ...state, buttonDisable: checkValidation });
     }
   }, [payload, index]);
 
@@ -291,7 +295,7 @@ const SignupFormComponent = ({
   };
 
   const renderComponent = mapSignUpComponents[type];
-  const {loading, error, buttonDisable} = state
+  const { loading, error, buttonDisable } = state;
   return (
     <View style={{ flex: 1 }}>
       <View style={{ backgroundColor: backgroundViewColor, height: '100%' }}>

@@ -1,6 +1,6 @@
 import { TextStyle, TextInput, ViewStyle, ImageStyle } from 'react-native';
 import { NextInputProps } from 'react-native-next-input/lib';
-import { DateSupportedFormats, PickerCheckBoxOptions, AutoCompleteObj } from '@src/types/formComponents/index';
+import { DateSupportedFormats, PickerCheckBoxOptions, AutoCompleteObj } from '../../types/formComponents/index';
 import { Image as ImageType } from 'react-native-image-crop-picker';
 export interface BaseProps {
     key: string;
