@@ -4590,7 +4590,8 @@ react-native-image-crop-picker@^0.36.0:
 
 "react-native-loading-spinner-overlay@git+https://github.com/blendtale/react-native-loading-spinner-overlay.git":
   version "2.0.0"
-  resolved "git+https://github.com/blendtale/react-native-loading-spinner-overlay.git#521d07ca12e0baeb2b1151d218c5da8a65cf98c3"
+  uid "056c8019fa5ee6b694d6dc71a17a84b4db41fdb8"
+  resolved "git+https://github.com/blendtale/react-native-loading-spinner-overlay.git#056c8019fa5ee6b694d6dc71a17a84b4db41fdb8"
 
 react-native-next-input@^0.10.3:
   version "0.10.7"
